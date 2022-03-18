@@ -101,7 +101,7 @@ const DashboardContent: React.FC = () => {
                     ? () => window.open(item.GITHUB, "_blank")
                     : () => {}
                 }
-                hover={item.GITHUB != "/" ? true : false}
+                hover={true}
               >
                 {" "}
                 <WorkIcon src={githubIcon} /> {item.TITLE}

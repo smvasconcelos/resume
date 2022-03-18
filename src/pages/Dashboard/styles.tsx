@@ -109,6 +109,10 @@ export const ExperienceIcon = styled.img`
   min-height: 65px;
   width: 120px;
   margin: 0 1em;
+  min-width: 120px;
+  @media screen and (max-width: 1100px) {
+    min-width: 60px;
+  }
   max-height: 65px;
 `;
 
@@ -132,10 +136,10 @@ export const ExperienceTitle = styled.p<{ hover?: boolean }>`
   flex-direction: row;
   justify-content: baseline;
   align-items: center;
-  margin-bottom: 1em;
   ${(props) =>
     props.hover &&
     css`
+      margin-bottom: 1em;
       cursor: pointer;
     `}
 `;

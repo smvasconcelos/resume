@@ -139,11 +139,11 @@ const SideBar: React.FC<{
           </SkillItem>
           <SkillItem>
             <SkillInfo>{lang.PYTHON}</SkillInfo>
-            {getSkillLevel(4.5)}
+            {getSkillLevel(3.5)}
           </SkillItem>
           <SkillItem>
             <SkillInfo>{lang.WEB}</SkillInfo>
-            {getSkillLevel(7.5)}
+            {getSkillLevel(6.5)}
           </SkillItem>
         </SkillsContainer>
 
