@@ -29,23 +29,52 @@ export const Container = styled.div`
   /* -webkit-box-shadow: 10px 7px 13px 5px rgba(0, 0, 0, 0.42);
   box-shadow: 10px 7px 13px 5px rgba(0, 0, 0, 0.42); */
   /* border: 5px solid ${colors.green}da; */
+
+  @media screen and (max-width: 1150px) {
+    width: 100%;
+    min-width: 85%;
+    min-height: 50vh;
+    max-height: 90vh;
+    padding: 0;
+    box-shadow: none;
+    /* background-color: ${colors.gray_darker}; */
+    background-color: transparent;
+  }
+  @media screen and (max-width: 600px) {
+    width: 50%;
+    min-width: 85%;
+    min-height: 50vh;
+    max-height: 90vh;
+    padding: 0;
+    box-shadow: none;
+    /* background-color: ${colors.gray_darker}; */
+    background-color: transparent;
+  }
 `;
 
 export const ProfileImage = styled.img`
   width: 100%;
   border-radius: 10px;
-  -webkit-box-shadow: 10px 7px 13px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 10px 7px 13px 5px rgba(0, 0, 0, 0.2);
+  /* -webkit-box-shadow: 10px 7px 13px 5px rgba(0, 0, 0, 0.2); */
+  /* box-shadow: 10px 7px 13px 5px rgba(0, 0, 0, 0.2); */
+  @media screen and (max-width: 1150px) {
+    max-width: 50%;
+    min-width: 50%;
+    background-color: transparent;
+  }
 `;
 
 export const Profile = styled.figure`
   /* position: absolute; */
   /* top: -1em; */
   width: 100%;
-  background-color: ${colors.gray};
   /* position: relative; */
   /* display: inline-block; */
   /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   border-radius: 10px;
   line-height: 0;
@@ -215,6 +244,11 @@ export const SocialContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 100%;
+
+  @media screen and (max-width: 1100px) {
+    background-color: transparent;
+    padding-bottom: 5em;
+  }
 `;
 
 export const SocialItem = styled.div`
@@ -276,12 +310,26 @@ export const SocialTextDescription = styled.span`
 `;
 
 export const SideBarContainer = styled.div`
+  z-index: 5;
   height: 100%;
   min-height: 100vh;
-  width: 10%;
+  width: 100%;
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: ${colors.gray_darker};
+  overflow: auto;
+`;
+
+export const CloseContainer = styled.div`
+  position: fixed;
+  top: 1em;
+  right: 1em;
+`;
+
+export const CloseIcon = styled.img`
+  width: 100px;
+  height: 100px;
 `;

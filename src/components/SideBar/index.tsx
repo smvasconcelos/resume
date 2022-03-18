@@ -6,11 +6,13 @@ import starIcon from "assets/star.svg";
 import filledStarIcon from "assets/filled_star.svg";
 import halfStarIcon from "assets/half_star.svg";
 import githubIcon from "assets/github.svg";
+import closeIcon from "assets/close.svg";
 
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
+  CloseContainer,
   Container,
   DescriptionContainer,
   Info,
@@ -19,6 +21,7 @@ import {
   InfoTitle,
   Profile,
   ProfileImage,
+  SideBarContainer,
   SkillIcon,
   SkillInfo,
   SkillItem,
@@ -196,12 +199,19 @@ const SideBar: React.FC = () => {
 };
 
 const MobileSideBar: React.FC<{
-  params: {
-    open: any;
-    setOpen: any;
-  };
-}> = ({ ...params }) => {
-  return <></>;
+  open: any;
+  setOpen: any;
+}> = ({ open, setOpen }) => {
+  return (
+    open && (
+      <SideBarContainer>
+        <CloseContainer>
+          <SocialIcon onClick={() => setOpen(false)} src={closeIcon} />
+        </CloseContainer>
+        <SideBar />
+      </SideBarContainer>
+    )
+  );
 };
 
 const Dashboard: React.FC<{
@@ -209,7 +219,7 @@ const Dashboard: React.FC<{
   open: boolean;
   setOpen: any;
 }> = ({ open, setOpen, mobile }) => {
-  return mobile ? <MobileSideBar params={{ open, setOpen }} /> : <SideBar />;
+  return mobile ? <MobileSideBar open={open} setOpen={setOpen} /> : <SideBar />;
 };
 
 export default Dashboard;
