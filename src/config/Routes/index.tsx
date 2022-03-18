@@ -1,4 +1,4 @@
-import Login from "pages/Dashboard";
+import Dashboard from "pages/Dashboard";
 
 import React, { useContext } from "react";
 import {
@@ -14,7 +14,7 @@ const Routes: React.FC = () => {
   return (
     <HashRouter>
       <RoutesDom>
-				<Route path="/login" element={<Login />} />
+				<Route path="/" element={<Dashboard />} />
       </RoutesDom>
     </HashRouter>
   );
