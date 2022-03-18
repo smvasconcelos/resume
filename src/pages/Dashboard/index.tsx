@@ -2,6 +2,7 @@ import dividerIcon from "assets/divider.svg";
 import ptIcon from "assets/flags/pt.svg";
 import enIcon from "assets/flags/en.svg";
 import menuIcon from "assets/menu.svg";
+import githubIcon from "assets/github.svg";
 
 import SideBar from "components/SideBar";
 import LangContext from "contexts/Lang";
@@ -16,6 +17,7 @@ import {
   Divider,
   ExperienceContainer,
   ExperienceIcon,
+  ExperienceItem,
   ExperiencePeriod,
   ExperienceTitle,
   MenuIcon,
@@ -23,7 +25,8 @@ import {
   SubTitle,
   Text,
   Title,
-  TopMenu
+  TopMenu,
+  WorkIcon
 } from "./styles";
 
 const DashboardContent: React.FC = () => {
@@ -45,7 +48,7 @@ const DashboardContent: React.FC = () => {
   const About = () => {
     return (
       <Article>
-        <Title>About Me</Title>
+        <Title>{lang.ABOUT}</Title>
         <Divider />
         <Text>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
@@ -60,22 +63,25 @@ const DashboardContent: React.FC = () => {
   const Experience = () => {
     return (
       <Article>
-        <Title>Experience</Title>
+        <Title>{lang.EXPERIENCE}</Title>
         <Divider />
-        <ExperienceContainer>
-          <ExperiencePeriod>2019 - 2020</ExperiencePeriod>
-          <ExperienceIcon src={dividerIcon} />
-          <div>
-            <ExperienceTitle>Lorem ipsum dolor s</ExperienceTitle>
-            <SubTitle>ASKDAP</SubTitle>
-            <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ea
-              ratione doloremque ab, natus at tempora a totam nisi possimus
-              architecto, perspiciatis fugit earum explicabo incidunt veritatis
-              deleniti dolorem quisquam!
-            </Text>
-          </div>
-        </ExperienceContainer>
+        {lang.SECTIONS.EXP.map((item, idx) => {
+          return (
+            <ExperienceContainer key={idx + "exp"}>
+              <ExperiencePeriod>
+                {item.DATE.toString().length == 4
+                  ? item.DATE + " - " + Date().split(" ")[3]
+                  : item.DATE}
+              </ExperiencePeriod>
+              <ExperienceIcon src={dividerIcon} />
+              <div>
+                <ExperienceTitle>{item.TITLE}</ExperienceTitle>
+                <SubTitle>{item.SUBTITLE}</SubTitle>
+                <Text>{item.DESCRIPTION}</Text>
+              </div>
+            </ExperienceContainer>
+          );
+        })}
       </Article>
     );
   };
@@ -83,14 +89,28 @@ const DashboardContent: React.FC = () => {
   const PersonalWorks = () => {
     return (
       <Article>
-        <Title>About Me</Title>
+        <Title>{lang.PROJECTS}</Title>
         <Divider />
-        <Text>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
-          consectetur voluptates veniam deleniti odio architecto in quam!
-          Nostrum rem dolor ipsam voluptas voluptate vero, alias, vitae quasi
-          repudiandae qui placeat.
-        </Text>
+        <br />
+        {lang.SECTIONS.PROJECTS.map((item, idx) => {
+          return (
+            <ExperienceItem key={idx + "proj"}>
+              <ExperienceTitle
+                onClick={
+                  item.GITHUB != "/"
+                    ? () => window.open(item.GITHUB, "_blank")
+                    : () => {}
+                }
+                hover={item.GITHUB != "/" ? true : false}
+              >
+                {" "}
+                <WorkIcon src={githubIcon} /> {item.TITLE}
+              </ExperienceTitle>
+              <Text>{item.DESCRIPTION}</Text>
+              <ArticleDivider />
+            </ExperienceItem>
+          );
+        })}
       </Article>
     );
   };

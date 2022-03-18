@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import colors from "constants/colors";
 import fonts from "constants/fonts";
 
@@ -8,6 +8,15 @@ export const DashContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
+`;
+
+export const FixedContent = styled.div<{ fixed: boolean }>`
+  ${(props) =>
+    props.fixed &&
+    css`
+      top: 30px;
+      position: sticky;
+    `}
 `;
 
 export const Container = styled.div`
@@ -153,6 +162,7 @@ export const DescriptionContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin: -0.4em 0;
 `;
 
@@ -183,9 +193,9 @@ export const InfoDescription = styled.p`
 `;
 
 export const SkillsContainer = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
-  padding: 1em;
+  padding: 2em;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -195,6 +205,13 @@ export const SkillsContainer = styled.div`
   /* -webkit-box-shadow: 2px 4px 13px 10px rgba(0, 0, 0, 0.2); */
   /* box-shadow: 2px 4px 13px 10px rgba(0, 0, 0, 0.2); */
   border-radius: 10px;
+  @media screen and (max-width: 1150px) {
+    width: 100%;
+    padding: 0em;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
   align-items: flex-start;
 `;
 
@@ -203,6 +220,7 @@ export const SkillItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const SkillIcon = styled.img`

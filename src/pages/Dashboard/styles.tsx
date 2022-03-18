@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import colors from "constants/colors";
 import fonts from "constants/fonts";
 
@@ -49,6 +49,7 @@ export const Title = styled.p`
 export const SubTitle = styled.p`
   /* ${fonts.subtitle}; */
   font-weight: normal;
+  font-style: italic;
   margin: 0;
   margin-bottom: 1em;
   color: ${colors.gray_darker};
@@ -94,6 +95,13 @@ export const ExperienceContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const ExperienceIcon = styled.img`
@@ -104,7 +112,11 @@ export const ExperienceIcon = styled.img`
   max-height: 65px;
 `;
 
-export const ExperienceTitle = styled.p`
+export const ExperienceItem = styled.div`
+  margin-bottom: 1em;
+`;
+
+export const ExperienceTitle = styled.p<{ hover?: boolean }>`
   text-transform: uppercase;
   ${fonts.title};
   color: ${colors.gray_darker};
@@ -116,6 +128,16 @@ export const ExperienceTitle = styled.p`
     font-size: 30px;
   }
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+  margin-bottom: 1em;
+  ${(props) =>
+    props.hover &&
+    css`
+      cursor: pointer;
+    `}
 `;
 
 export const ExperiencePeriod = styled.span`
@@ -135,18 +157,22 @@ export const ExperiencePeriod = styled.span`
     font-size: 20px;
   }
   margin: 0;
+  @media screen and (max-width: 500px) {
+    /* margin: 1em 0; */
+    display: none;
+  }
 `;
 
 export const TopMenu = styled.div`
   display: flex;
   flex-direction: row;
-  position: fixed;
+  position: absolute;
   padding: 1em;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   top: 1em;
   right: 1em;
-  background-color: ${colors.divider};
+  /* background-color: ${colors.divider}; */
   @media screen and (max-width: 500px) {
     position: fixed;
     right: 10%;
@@ -159,11 +185,17 @@ export const MenuItem = styled.div`
   border-radius: 50%;
   padding: 1em;
   margin: 0 1em;
-  -webkit-box-shadow: 2px 4px 13px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 2px 4px 13px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 2px 4px 13px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 4px 13px 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const MenuIcon = styled.img`
   width: 23px;
   height: 20px;
+`;
+
+export const WorkIcon = styled.img`
+  width: 35px;
+  height: 30px;
+  margin-right: 0.2em;
 `;

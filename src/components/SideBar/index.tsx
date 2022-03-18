@@ -15,6 +15,7 @@ import {
   CloseContainer,
   Container,
   DescriptionContainer,
+  FixedContent,
   Info,
   InfoContainer,
   InfoDescription,
@@ -40,7 +41,9 @@ import {
 } from "./styles";
 import LangContext from "contexts/Lang";
 
-const SideBar: React.FC = () => {
+const SideBar: React.FC<{
+  mobile?: boolean;
+}> = ({ mobile }) => {
   const navigate = useNavigate();
   const { lang } = useContext(LangContext);
 
@@ -59,13 +62,16 @@ const SideBar: React.FC = () => {
   const getSkillLevel = (level: number) => {
     let i = 0;
     let stars = Array();
+    let half = false;
     for (i; i < level - 1 && i < 9; i++) {
       stars.push(<SkillIcon key={i} src={filledStarIcon} />);
     }
     if (level < Math.ceil(level)) {
+      half = true;
       stars.push(<SkillIcon key={i + "k"} src={halfStarIcon} />);
     }
     if (i < 9) {
+      if (half) i += 1;
       for (i; i < 9; i++) {
         stars.push(<SkillIcon key={i + "j"} src={starIcon} />);
       }
@@ -79,7 +85,7 @@ const SideBar: React.FC = () => {
       <Profile>
         <ProfileImage src={profileImage} />
       </Profile>
-      <>
+      <FixedContent fixed={mobile || false}>
         <TitleContainer>
           <Title>{lang.NAME}</Title>
           <SubTitle>{lang.EXPERT}</SubTitle>
@@ -108,6 +114,10 @@ const SideBar: React.FC = () => {
             <InfoDescription>{lang.PHONE_}</InfoDescription>
           </DescriptionContainer>
           <DescriptionContainer>
+            <Info>Email</Info>
+            <InfoDescription>smvasconcelos11@gmail.com</InfoDescription>
+          </DescriptionContainer>
+          <DescriptionContainer>
             <Info>{lang.ADRESS}</Info>
             <InfoDescription>{lang.ADRESS_}</InfoDescription>
           </DescriptionContainer>
@@ -117,7 +127,7 @@ const SideBar: React.FC = () => {
           <SkillsTitle>{lang.SKILLS}</SkillsTitle>
           <SkillItem>
             <SkillInfo>{lang.ENGLISH}</SkillInfo>
-            {getSkillLevel(7.5)}
+            {getSkillLevel(7)}
           </SkillItem>
           <SkillItem>
             <SkillInfo>{lang.REACTJS}</SkillInfo>
@@ -151,7 +161,9 @@ const SideBar: React.FC = () => {
             </SocialIconContainer>
             <SocialTextContainer>
               <SocialText>linkedin.com/smvasconcelos</SocialText>
-              <SocialTextDescription>linkedin/profile</SocialTextDescription>
+              <SocialTextDescription>
+                linkedin/{lang.PROFILE}
+              </SocialTextDescription>
             </SocialTextContainer>
           </SocialItem>
           <SocialItem
@@ -167,7 +179,9 @@ const SideBar: React.FC = () => {
             </SocialIconContainer>
             <SocialTextContainer>
               <SocialText>@smv4sconcelos</SocialText>
-              <SocialTextDescription>instagram/profile</SocialTextDescription>
+              <SocialTextDescription>
+                instagram/{lang.PROFILE}
+              </SocialTextDescription>
             </SocialTextContainer>
           </SocialItem>
           <SocialItem>
@@ -189,11 +203,13 @@ const SideBar: React.FC = () => {
             </SocialIconContainer>
             <SocialTextContainer>
               <SocialText>github.com/smvasconcelos</SocialText>
-              <SocialTextDescription>github/profile</SocialTextDescription>
+              <SocialTextDescription>
+                github/{lang.PROFILE}
+              </SocialTextDescription>
             </SocialTextContainer>
           </SocialItem>
         </SocialContainer>
-      </>
+      </FixedContent>
     </Container>
   );
 };
@@ -219,7 +235,11 @@ const Dashboard: React.FC<{
   open: boolean;
   setOpen: any;
 }> = ({ open, setOpen, mobile }) => {
-  return mobile ? <MobileSideBar open={open} setOpen={setOpen} /> : <SideBar />;
+  return mobile ? (
+    <MobileSideBar open={open} setOpen={setOpen} />
+  ) : (
+    <SideBar mobile={mobile} />
+  );
 };
 
 export default Dashboard;
