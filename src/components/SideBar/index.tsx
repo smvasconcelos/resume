@@ -41,18 +41,30 @@ const SideBar: React.FC = () => {
   const navigate = useNavigate();
   const { lang } = useContext(LangContext);
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    updateWindowDimensions();
+    window.addEventListener("resize", updateWindowDimensions);
+    return () => window.removeEventListener("resize", updateWindowDimensions);
+  }, []);
+
   const getSkillLevel = (level: number) => {
     let i = 0;
     let stars = Array();
     for (i; i < level - 1 && i < 9; i++) {
-      stars.push(<SkillIcon src={filledStarIcon} />);
+      stars.push(<SkillIcon key={i} src={filledStarIcon} />);
     }
     if (level < Math.ceil(level)) {
-      stars.push(<SkillIcon src={halfStarIcon} />);
+      stars.push(<SkillIcon key={i + "k"} src={halfStarIcon} />);
     }
     if (i < 9) {
       for (i; i < 9; i++) {
-        stars.push(<SkillIcon src={starIcon} />);
+        stars.push(<SkillIcon key={i + "j"} src={starIcon} />);
       }
     }
 
@@ -123,7 +135,14 @@ const SideBar: React.FC = () => {
         </SkillsContainer>
 
         <SocialContainer>
-          <SocialItem>
+          <SocialItem
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/in/samuel-vasconcelos-b196001ba/",
+                "_blank"
+              )
+            }
+          >
             <SocialIconContainer>
               <SocialIcon src={linkedinIcon} />
             </SocialIconContainer>
@@ -132,7 +151,14 @@ const SideBar: React.FC = () => {
               <SocialTextDescription>linkedin/profile</SocialTextDescription>
             </SocialTextContainer>
           </SocialItem>
-          <SocialItem>
+          <SocialItem
+            onClick={() =>
+              window.open(
+                "https://www.instagram.com/smv4sconcelos/?hl=pt-br",
+                "_blank"
+              )
+            }
+          >
             <SocialIconContainer>
               <SocialIcon src={instagramIcon} />
             </SocialIconContainer>
@@ -150,7 +176,11 @@ const SideBar: React.FC = () => {
               <SocialTextDescription>email/gmail</SocialTextDescription>
             </SocialTextContainer>
           </SocialItem>
-          <SocialItem>
+          <SocialItem
+            onClick={() =>
+              window.open("https://www.github.com/smvasconcelos", "_blank")
+            }
+          >
             <SocialIconContainer>
               <SocialIcon src={githubIcon} />
             </SocialIconContainer>
@@ -165,8 +195,21 @@ const SideBar: React.FC = () => {
   );
 };
 
-const Dashboard: React.FC = () => {
-  return <SideBar />;
+const MobileSideBar: React.FC<{
+  params: {
+    open: any;
+    setOpen: any;
+  };
+}> = ({ ...params }) => {
+  return <></>;
+};
+
+const Dashboard: React.FC<{
+  mobile: boolean;
+  open: boolean;
+  setOpen: any;
+}> = ({ open, setOpen, mobile }) => {
+  return mobile ? <MobileSideBar params={{ open, setOpen }} /> : <SideBar />;
 };
 
 export default Dashboard;

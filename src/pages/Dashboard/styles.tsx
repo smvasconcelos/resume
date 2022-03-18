@@ -12,7 +12,11 @@ export const Container = styled.div`
   /* padding-right: 3em; */
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+  @media screen and (max-width: 500px) {
+    padding-top: 32%;
+  }
+`;
 
 export const Article = styled.article`
   padding: 4em;
@@ -23,6 +27,9 @@ export const Article = styled.article`
   align-items: flex-start;
   /* border-bottom: 10px solid ${colors.divider}; */
   /* max-width: 1360px; */
+  @media screen and (max-width: 500px) {
+    padding: 1em;
+  }
 `;
 
 export const Title = styled.p`
@@ -130,3 +137,33 @@ export const ExperiencePeriod = styled.span`
   margin: 0;
 `;
 
+export const TopMenu = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  padding: 1em;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  top: 1em;
+  right: 1em;
+  background-color: ${colors.divider};
+  @media screen and (max-width: 500px) {
+    position: fixed;
+    right: 10%;
+  }
+`;
+
+export const MenuItem = styled.div`
+  cursor: pointer;
+  background-color: ${colors.green};
+  border-radius: 50%;
+  padding: 1em;
+  margin: 0 1em;
+  -webkit-box-shadow: 2px 4px 13px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 13px 10px rgba(0, 0, 0, 0.2);
+`;
+
+export const MenuIcon = styled.img`
+  width: 23px;
+  height: 20px;
+`;

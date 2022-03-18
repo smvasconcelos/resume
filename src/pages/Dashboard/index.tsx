@@ -1,8 +1,13 @@
+import dividerIcon from "assets/divider.svg";
+import ptIcon from "assets/flags/pt.svg";
+import enIcon from "assets/flags/en.svg";
+import menuIcon from "assets/menu.svg";
+
 import SideBar from "components/SideBar";
 import LangContext from "contexts/Lang";
+
 import React, { useContext, useEffect, useState } from "react";
-import dividerIcon from "assets/divider.svg";
-import { useNavigate } from "react-router-dom";
+import { DashContainer, SideBarContainer } from "components/SideBar/styles";
 import {
   Article,
   ArticleDivider,
@@ -13,14 +18,29 @@ import {
   ExperienceIcon,
   ExperiencePeriod,
   ExperienceTitle,
+  MenuIcon,
+  MenuItem,
   SubTitle,
   Text,
-  Title
+  Title,
+  TopMenu
 } from "./styles";
-import { DashContainer } from "components/SideBar/styles";
 
 const DashboardContent: React.FC = () => {
   const { lang, changeLang } = useContext(LangContext);
+  const [openSideBar, setOpenSiteBar] = useState<boolean>(false);
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    updateWindowDimensions();
+    window.addEventListener("resize", updateWindowDimensions);
+    return () => window.removeEventListener("resize", updateWindowDimensions);
+  }, []);
 
   const About = () => {
     return (
@@ -77,8 +97,27 @@ const DashboardContent: React.FC = () => {
 
   return (
     <DashContainer>
-      <SideBar />
+      <SideBar
+        mobile={screenWidth < 1200}
+        open={openSideBar}
+        setOpen={setOpenSiteBar}
+      />
       <Container>
+        <TopMenu>
+          <MenuItem onClick={() => changeLang("pt")}>
+            <MenuIcon src={ptIcon} />
+          </MenuItem>
+          <MenuItem onClick={() => changeLang("en")}>
+            <MenuIcon src={enIcon} />
+          </MenuItem>
+          {screenWidth < 1200 ? (
+            <MenuItem onClick={() => setOpenSiteBar(true)}>
+              <MenuIcon src={menuIcon} />
+            </MenuItem>
+          ) : (
+            <></>
+          )}
+        </TopMenu>
         <Content>
           <About />
           <ArticleDivider />

@@ -18,7 +18,7 @@ export const LangProvider: React.FC = ({ children }) => {
   const [langState] = useState<ILangOptions>({ en, pt });
   const [langChanged, setLangChanged] = useState<boolean>(false);
   const [currentState, setCurrentState] = useState<string>("en");
-  const changeLang = (key: string) => {
+	const changeLang = (key: string) => {
     setLang(langState[key] || langState["en"]);
     setCurrentState(key);
     setLangChanged(!langChanged);

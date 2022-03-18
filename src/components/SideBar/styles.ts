@@ -3,9 +3,11 @@ import colors from "constants/colors";
 import fonts from "constants/fonts";
 
 export const DashContainer = styled.div`
+  transition: all 0.5s ease-in-out;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100%;
 `;
 
 export const Container = styled.div`
@@ -221,6 +223,7 @@ export const SocialItem = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top: 1em;
+  cursor: pointer;
 `;
 
 export const SocialIconContainer = styled.div`
@@ -244,6 +247,7 @@ export const SocialTextContainer = styled.div`
   flex-direction: column;
   /* justify-content: space-between; */
   align-items: flex-start;
+  cursor: pointer;
 `;
 
 export const SocialText = styled.span`
@@ -269,4 +273,15 @@ export const SocialTextDescription = styled.span`
   @media screen and (min-width: 1000px) {
     font-size: 12px;
   }
+`;
+
+export const SideBarContainer = styled.div`
+  height: 100%;
+  min-height: 100vh;
+  width: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: ${colors.gray_darker};
 `;
