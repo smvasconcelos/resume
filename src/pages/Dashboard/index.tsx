@@ -3,6 +3,7 @@ import ptIcon from "assets/flags/pt.svg";
 import enIcon from "assets/flags/en.svg";
 import menuIcon from "assets/menu.svg";
 import githubIcon from "assets/github.svg";
+import reactjsIcon from "assets/reactjs.svg";
 
 import SideBar from "components/SideBar";
 import LangContext from "contexts/Lang";
@@ -28,10 +29,12 @@ import {
   TopMenu,
   WorkIcon
 } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const DashboardContent: React.FC = () => {
   const { lang, changeLang } = useContext(LangContext);
   const [openSideBar, setOpenSiteBar] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -107,7 +110,36 @@ const DashboardContent: React.FC = () => {
                 <WorkIcon src={githubIcon} /> {item.TITLE}
               </ExperienceTitle>
               <Text>{item.DESCRIPTION}</Text>
-              <ArticleDivider />
+              {lang.SECTIONS.PROJECTS.length != idx + 1 ? (
+                <ArticleDivider />
+              ) : (
+                <></>
+              )}
+            </ExperienceItem>
+          );
+        })}
+      </Article>
+    );
+  };
+  const Clones = () => {
+    return (
+      <Article>
+        <Title>Clones</Title>
+        <Divider />
+        <br />
+        {lang.SECTIONS.CLONES.map((item, idx) => {
+          return (
+            <ExperienceItem key={idx + "proj"}>
+              <ExperienceTitle onClick={() => navigate(item.LINK)} hover={true}>
+                {" "}
+                <WorkIcon src={reactjsIcon} /> {item.TITLE}
+              </ExperienceTitle>
+              <Text>{item.DESCRIPTION}</Text>
+              {lang.SECTIONS.CLONES.length != idx + 1 ? (
+                <ArticleDivider />
+              ) : (
+                <></>
+              )}
             </ExperienceItem>
           );
         })}
@@ -144,6 +176,8 @@ const DashboardContent: React.FC = () => {
           <Experience />
           <ArticleDivider />
           <PersonalWorks />
+          {/* <ArticleDivider /> */}
+          {/* <Clones /> */}
         </Content>
       </Container>
     </DashContainer>

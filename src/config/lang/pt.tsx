@@ -87,6 +87,14 @@ const pt = {
         DESCRIPTION:
           "Durante o processo de treinamento da empresa Jr de Computação ( TecnoJr) foram desenvolvidos diversas aplicações mobile e web para fixação dos conhecimentos ensinados."
       }
+    ],
+    CLONES: [
+      {
+        TITLE: "Netflix",
+        LINK: "/netflix",
+        DESCRIPTION:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quaerat est odio, quos sint voluptatem. Natus ipsum rerum est odio. Eaque laudantium iusto sunt labore adipisci, cupiditate corrupti dolorum molestiae?"
+      }
     ]
   }
 };

@@ -27,14 +27,14 @@ const en = {
     EXP: [
       {
         TITLE: "Mobile Developer",
-        SUBTITLE: "PIITI Scholarship | August 2020 to July 2021",
+        SUBTITLE: "PIBITI Scholarship | August 2020 to July 2021",
         DATE: "2020 - 2021",
         DESCRIPTION:
           "Mobile project developed using React Native, which aims to modernize the collection process of the ACCB project (Accompaniment of Basic Basket Costs), allows synchronizing with an existing web system and facilitating the personal collection process that was carried out manually and then entered into the system."
       },
       {
         TITLE: "Desktop Developer",
-        SUBTITLE: "PIITI Scholarship | August 2020 to July 2021",
+        SUBTITLE: "PIBITI Scholarship | August 2020 to July 2021",
         DATE: "2020 - 2021",
         DESCRIPTION:
           "Desktop project developed in python, which aims to facilitate the process of acquiring information from the ACCB project (Accompaniment of Cost of the Basic Basket), its main function is to carry out a Scrapping process on the Price of the Hour platform - Bahia and return a collection of formatted Excel files, which will later be inserted into the system."
@@ -86,6 +86,14 @@ const en = {
         GITHUB: "/",
         DESCRIPTION:
           "During the training process of the company Jr de Computação (TecnoJr) several mobile and web applications were developed to establish the knowledge taught."
+      }
+    ],
+    CLONES: [
+      {
+        TITLE: "Netflix",
+        LINK: "/netflix",
+        DESCRIPTION:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quaerat est odio, quos sint voluptatem. Natus ipsum rerum est odio. Eaque laudantium iusto sunt labore adipisci, cupiditate corrupti dolorum molestiae?"
       }
     ]
   }
