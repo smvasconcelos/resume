@@ -156,12 +156,12 @@ const DashboardContent: React.FC = () => {
       />
       <Container>
         <TopMenu>
-          <MenuItem onClick={() => changeLang("pt")}>
+          {/* <MenuItem onClick={() => changeLang("pt")}>
             <MenuIcon src={ptIcon} />
           </MenuItem>
           <MenuItem onClick={() => changeLang("en")}>
             <MenuIcon src={enIcon} />
-          </MenuItem>
+          </MenuItem> */}
           {screenWidth < 1200 ? (
             <MenuItem onClick={() => setOpenSiteBar(true)}>
               <MenuIcon src={menuIcon} />

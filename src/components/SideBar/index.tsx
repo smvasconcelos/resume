@@ -63,16 +63,16 @@ const SideBar: React.FC<{
     let i = 0;
     let stars = Array();
     let half = false;
-    for (i; i < level - 1 && i < 9; i++) {
+    for (i; i < level - 1 && i < 10; i++) {
       stars.push(<SkillIcon key={i} src={filledStarIcon} />);
     }
     if (level < Math.ceil(level)) {
       half = true;
       stars.push(<SkillIcon key={i + "k"} src={halfStarIcon} />);
     }
-    if (i < 9) {
+    if (i < 10) {
       if (half) i += 1;
-      for (i; i < 9; i++) {
+      for (i; i < 10; i++) {
         stars.push(<SkillIcon key={i + "j"} src={starIcon} />);
       }
     }
@@ -127,7 +127,7 @@ const SideBar: React.FC<{
           <SkillsTitle>{lang.SKILLS}</SkillsTitle>
           <SkillItem>
             <SkillInfo>{lang.ENGLISH}</SkillInfo>
-            {getSkillLevel(7)}
+            {getSkillLevel(6)}
           </SkillItem>
           <SkillItem>
             <SkillInfo>{lang.REACTJS}</SkillInfo>

@@ -14,7 +14,7 @@ const Routes: React.FC = () => {
     <HashRouter>
       <RoutesDom>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/netflix" element={<Netflix />} />
+        {/* <Route path="/netflix" element={<Netflix />} /> */}
       </RoutesDom>
     </HashRouter>
   );
