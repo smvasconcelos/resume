@@ -10,20 +10,20 @@ const LangContext = createContext<ILangContext>({
   changeLang: (key: string) => null,
   lang: en,
   langChanged: false,
-  currentLangKey: "en",
+	currentLangKey: "pt",
 });
 
 export const LangProvider: React.FC = ({ children }) => {
   const [lang, setLang] = useState<typeof en>(en);
   const [langState] = useState<ILangOptions>({ en, pt });
   const [langChanged, setLangChanged] = useState<boolean>(false);
-  const [currentState, setCurrentState] = useState<string>("en");
+	const [currentState, setCurrentState] = useState<string>("pt");
 	const changeLang = (key: string) => {
-    setLang(langState[key] || langState["en"]);
+		setLang(langState[key] || langState["pt"]);
     setCurrentState(key);
     setLangChanged(!langChanged);
     setCurrentState(key);
-    language.lang = langState[key] || langState["en"];
+		language.lang = langState[key] || langState["pt"];
     langStorage.set(key);
   };
 
@@ -34,7 +34,7 @@ export const LangProvider: React.FC = ({ children }) => {
       changeLang(localKey);
       setCurrentState(localKey);
     } else {
-      changeLang("en");
+			changeLang("pt");
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
