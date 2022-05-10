@@ -1,71 +1,71 @@
-const pt = {
-	LANGUAGE: "Idioma",
-	NAME_HOLDER: "Nome",
+const en = {
+	LANGUAGE: "Lang",
+	NAME_HOLDER: "Name",
 	NAME: "Samuel Vasconcelos",
 	EXPERT: "Full Stack Developer",
-	BIRTH: "Data de Nascimento",
-	BIRTH_: "09/12/1998",
-	NATIONALITY: "Nacionalidade",
-	NATIONALITY_: "Brasileiro",
-	PERSONAL: "Pessoal",
-	CONTACT: "Contato",
-	PHONE: "Telefone",
+	BIRTH: "Date of Birth",
+	BIRTH_: "12/09/1998",
+	NATIONALITY: "Nationality",
+	NATIONALITY_: "Brazilian",
+	PERSONAL: "Personal",
+	CONTACT: "Contact",
+	PHONE: "Phone",
 	PHONE_: "+55 (73) 99185 - 3260",
-	ADRESS: "Endereço",
+	ADRESS: "Adress",
 	ADRESS_: "Rua São Sebastião, Itabuna, Bahia, Brazil.",
-	SKILLS: "Conhecimento",
-	ENGLISH: "Inglês",
+	SKILLS: "Skills",
+	ENGLISH: "English",
 	PYTHON: "Python",
 	WEB: "Web",
 	REACTJS: "React JS",
 	REACTNATIVE: "React Native",
-	ABOUT: "Sobre",
-	PROFILE: "perfil",
-	EXPERIENCE: "Experiências",
-	PROJECTS: "Projetos Pessoais",
+	ABOUT: "About Me",
+	PROFILE: "profile",
+	EXPERIENCE: "Experience",
+	PROJECTS: "Personal Projects",
 	SECTIONS: {
 		EXP: [
 			{
-				TITLE: "Desenvolvedor Mobile",
-				SUBTITLE: "Bolsista PIBITI | Agosto de 2020 até Julho 2021",
+				TITLE: "Mobile Developer",
+				SUBTITLE: "PIBITI Scholarship | August 2020 to July 2021",
 				DATE: "2020 - 2021",
 				DESCRIPTION:
-					"Projeto mobile desenvolvido utilizando React Native, que tem como intuito de mordenizar o processo de coleta do projeto ACCB (Acompanhamento de Custa da Cesta Básica), permite sincronizar com um sistema web ja existente e facilitar o processo de coleta pessoal que era realizado manualmente e depois inserido no sistema."
+					"Mobile project developed using React Native, which aims to modernize the collection process of the ACCB project (Accompaniment of Basic Basket Costs), allows synchronizing with an existing web system and facilitating the personal collection process that was carried out manually and then entered into the system."
 			},
 			{
-				TITLE: "Desenvolvedor Desktop",
-				SUBTITLE: "Bolsista PIBITI | Agosto de 2020 até Julho 2021",
+				TITLE: "Desktop Developer",
+				SUBTITLE: "PIBITI Scholarship | August 2020 to July 2021",
 				DATE: "2020 - 2021",
 				DESCRIPTION:
-					"Projeto desktop desenvolvido em python, este que tem como objetivo facilitar o processo de aquisição de informação do projeto ACCB (Acompanhamento de Custa da Cesta Básica), tem como principal função realizar um processo de Scrapping na plataforma Preço da Hora - Bahia e devolver uma coleção de arquivos Excel formatados, estes que serão posteriormente inseridos no sistema."
+					"Desktop project developed in python, which aims to facilitate the process of acquiring information from the ACCB project (Accompaniment of Cost of the Basic Basket), its main function is to carry out a Scrapping process on the Price of the Hour platform - Bahia and return a collection of formatted Excel files, which will later be inserted into the system."
 			},
 			{
-				TITLE: "Desenvolvedor FullStack",
-				SUBTITLE: "TecnoJr | Dezembro de 2018 até o presente",
+				TITLE: "FullStack Developer",
+				SUBTITLE: "TecnoJr | December 2018 to present",
 				DATE: "2018",
 				DESCRIPTION:
-					"Densenvolvo aplicações web e mobile como membro da empresa junior de computação TecnoJr."
+					"I develop web and mobile applications as a member of the junior computing company TecnoJr."
 			},
 			{
-				TITLE: "Gerente de Capacitação",
-				SUBTITLE: "TecnoJr | Janeiro de 2019 até Dezembro de 2019",
+				TITLE: "Training Manager",
+				SUBTITLE: "TecnoJr | January 2019 to December 2019",
 				DATE: "2019 - 2019",
 				DESCRIPTION:
-					"Responsável pelo processo de treinamento de trainees da empresa junior de computação TecnoJr, ministrando aulas de vários tópicos, tais como : html, css, js, php, react native, wordpress."
+					"Responsible for the training process of trainees at the junior computing company TecnoJr, teaching classes on various topics, such as: html, css, js, php, react native, wordpress."
 			},
 			{
 				TITLE: "NASA Space Apps",
-				SUBTITLE: "UEFS | 19 à 20 de Outubro de 2019",
+				SUBTITLE: "UEFS | October 19 to 20, 2019",
 				DATE: "2019 - 2019",
 				DESCRIPTION:
-					"Evento internacional organizado pela NASA. Foi alcaçando juntamente com minha equipe o quinto lugar durante a etapa da competição realizada na universidade."
+					"International event organized by NASA. Together with my team, I achieved fifth place during the competition stage held at the university."
 			},
 			{
-				TITLE: "Desenvolvedor FullStack",
-				SUBTITLE: "Softrends | Outubro de 2021 até o presente",
+				TITLE: "FullStack Developer",
+				SUBTITLE: "Softrends | October 2021 to Present",
 				DATE: "2021",
 				DESCRIPTION:
-					"Este cargo consiste em auxiliar com a etapa de planejamento de telas das aplicações e em seguida desenvolve-las utilizando as ferramentas React JS, React Native, Node JS, entre outras."
+					"This position consists of helping with the screen planning stage of the applications and then developing them using React JS, React Native, Node JS tools, among others."
 			}
 		],
 		PROJECTS: [
@@ -73,19 +73,19 @@ const pt = {
 				TITLE: "PayFlow",
 				GITHUB: "https://github.com/smvasconcelos/NLW-Flutter",
 				DESCRIPTION:
-					"Desenvolvido durante a Next Level Week na trilha Flutter. O PayFlow se trata de um app mobile feito em Flutter para Gerenciamento de Boletos, contendo recursos como o uso de câmera e galeria, Machine Leaning com MLKit, Firebase Core e SignIn, Animações e Estilizações Personalizadas, entre vários outros pontos, como o uso do SharedPreferences."
+					"Developed during Next Level Week on the Flutter track. PayFlow is a mobile app made in Flutter for Boletos Management, containing features such as the use of camera and gallery, Machine Leaning with MLKit, Firebase Core and SignIn, Animations and Stylizations Custom, among many other things, such as the use of SharedPreferences."
 			},
 			{
 				TITLE: "Quick Notes",
 				GITHUB: "https://github.com/smvasconcelos/quick-notes",
 				DESCRIPTION:
-					"Desenvolvido para demonstrar a utilização básica da ferramenta React Native com banco local."
+					"Developed to demonstrate basic usage of React Native tool with local database."
 			},
 			{
-				TITLE: "Diversas Aplicações",
+				TITLE: "Various Applications",
 				GITHUB: "/",
 				DESCRIPTION:
-					"Durante o processo de treinamento da empresa Jr de Computação ( TecnoJr) foram desenvolvidos diversas aplicações mobile e web para fixação dos conhecimentos ensinados."
+					"During the training process of the company Jr de Computação (TecnoJr) several mobile and web applications were developed to establish the knowledge taught."
 			}
 		],
 		CLONES: [
@@ -99,4 +99,4 @@ const pt = {
 	}
 };
 
-export default pt;
+export default en;
