@@ -37,7 +37,7 @@ const en = {
 				SUBTITLE: "PIBITI Scholarship | August 2020 to July 2021",
 				DATE: "2020 - 2021",
 				DESCRIPTION:
-					"Desktop project developed in python, which aims to simplify the process of acquiring information from the ACCB project (Accompaniment of Cost of the Basic Basket), its main function is to carry out a Scrapping process on the 'Preço da Hora - Bahia' and return a collection of formatted Excel files, which will later be inserted into the system."
+					"Desktop project developed in python, which aims to simplify the process of acquiring information from the ACCB project (Acompanhamento do Custo da Cesta Básica), its main function is to carry out a Scrapping process on the 'Preço da Hora - Bahia' and return a collection of formatted Excel files, which will later be inserted into the system."
 			},
 			{
 				TITLE: "FullStack Developer",
