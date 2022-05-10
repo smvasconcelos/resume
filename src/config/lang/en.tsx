@@ -30,14 +30,14 @@ const en = {
 				SUBTITLE: "PIBITI Scholarship | August 2020 to July 2021",
 				DATE: "2020 - 2021",
 				DESCRIPTION:
-					"Mobile project developed using React Native, which aims to modernize the collection process of the ACCB project (Accompaniment of Basic Basket Costs), allows synchronizing with an existing web system and facilitating the personal collection process that was carried out manually and then entered into the system."
+					"Mobile project developed using React Native, which aims to modernize the collection process of the ACCB project (Acompanhamento do Custo da Cesta Básica), allows synchronizing with an existing web system and facilitating the personal collection process that was carried out manually and then entered into the system."
 			},
 			{
 				TITLE: "Desktop Developer",
 				SUBTITLE: "PIBITI Scholarship | August 2020 to July 2021",
 				DATE: "2020 - 2021",
 				DESCRIPTION:
-					"Desktop project developed in python, which aims to facilitate the process of acquiring information from the ACCB project (Accompaniment of Cost of the Basic Basket), its main function is to carry out a Scrapping process on the Price of the Hour platform - Bahia and return a collection of formatted Excel files, which will later be inserted into the system."
+					"Desktop project developed in python, which aims to simplify the process of acquiring information from the ACCB project (Accompaniment of Cost of the Basic Basket), its main function is to carry out a Scrapping process on the 'Preço da Hora - Bahia' and return a collection of formatted Excel files, which will later be inserted into the system."
 			},
 			{
 				TITLE: "FullStack Developer",
