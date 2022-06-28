@@ -82,6 +82,12 @@ const en = {
 					"Developed to demonstrate basic usage of React Native tool with local database."
 			},
 			{
+				TITLE: "Web Tracker",
+				GITHUB: "https://github.com/smvasconcelos/extensions",
+				DESCRIPTION:
+					"This was my first impressive experience with an extension, so it had a great opportunity to learn about a browser's storage and lifecycle. Despite having a different name, the essence is the same as any web project: html, css, js which makes it a lot easier due to my previous experiences."
+			},
+			{
 				TITLE: "Various Applications",
 				GITHUB: "/",
 				DESCRIPTION:

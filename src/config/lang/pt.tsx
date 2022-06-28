@@ -80,8 +80,14 @@ const pt = {
         GITHUB: "https://github.com/smvasconcelos/quick-notes",
         DESCRIPTION:
           "Desenvolvido para demonstrar a utilização básica da ferramenta React Native com banco local."
-      },
-      {
+			},
+			{
+				TITLE: "Web Tracker",
+				GITHUB: "https://github.com/smvasconcelos/extensions",
+				DESCRIPTION:
+					"Essa foi minha primeira experiência construindo uma extensão, então tive uma ótima oportunidade de aprender sobre como o storage de um navegador funciona e o seu ciclo de vida. Apesar de ter um nome diferente, a essência é a mesma de qualquer projeto web: html, css, js o que facilitou bastante devido às minhas experiências anteriores."
+			},
+			{
         TITLE: "Diversas Aplicações",
         GITHUB: "/",
         DESCRIPTION:
