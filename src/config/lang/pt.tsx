@@ -62,7 +62,7 @@ const pt = {
       },
       {
         TITLE: "Desenvolvedor FullStack",
-        SUBTITLE: "Softrends | Outubro de 2021 até o presente",
+				SUBTITLE: "Softrends | Outubro de 2021 até Junho 2022",
         DATE: "2021",
         DESCRIPTION:
           "Este cargo consiste em auxiliar com a etapa de planejamento de telas das aplicações e em seguida desenvolve-las utilizando as ferramentas React JS, React Native, Node JS, entre outras."

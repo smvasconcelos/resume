@@ -62,7 +62,7 @@ const en = {
 			},
 			{
 				TITLE: "FullStack Developer",
-				SUBTITLE: "Softrends | October 2021 to Present",
+				SUBTITLE: "Softrends | October 2021 to June 2022",
 				DATE: "2021",
 				DESCRIPTION:
 					"This position consists of helping with the screen planning stage of the applications and then developing them using React JS, React Native, Node JS tools, among others."
