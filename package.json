@@ -1,7 +1,6 @@
 {
   "name": "resume",
-  "repository": "https://github.com/smvasconcelos/resume",
-  "homepage": "https://github.com/smvasconcelos/resume",
+  "homepage": "https://myusername.github.io/resume",
   "version": "1.1.0",
   "private": false,
   "dependencies": {
