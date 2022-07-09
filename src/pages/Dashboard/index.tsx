@@ -21,8 +21,13 @@ import {
 	ExperienceItem,
 	ExperiencePeriod,
 	ExperienceTitle,
+	ExpList,
+	ExpListItem,
+	ExpListTitle,
 	MenuIcon,
 	MenuItem,
+	SkillItem,
+	Skills,
 	SubTitle,
 	Text,
 	Title,
@@ -38,6 +43,10 @@ const DashboardContent: React.FC = () => {
 
 	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
+	const trim = (s: string) => {
+		return (s || '').replace(/^\s+|\s+$/g, '');
+	}
+
 	useEffect(() => {
 		const updateWindowDimensions = () => {
 			setScreenWidth(window.innerWidth);
@@ -51,17 +60,47 @@ const DashboardContent: React.FC = () => {
 	const About = () => {
 		return (
 			<Article>
-				<Title>{lang.ABOUT}</Title>
+				<Title>{lang.SKILLS}</Title>
 				<Divider />
-				<Text>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
-					consectetur voluptates veniam deleniti odio architecto in quam!
-					Nostrum rem dolor ipsam voluptas voluptate vero, alias, vitae quasi
-					repudiandae qui placeat. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur numquam accusantium doloribus in recusandae assumenda, et laudantium esse facere! Veritatis totam tenetur iste nam dicta similique earum officia accusantium consectetur!
-				</Text>
+				<Skills>
+					{
+						lang.SECTIONS.SKILLS.map((skill, index) => {
+							return (
+								<SkillItem key={"skill" + index}>
+									{skill}
+								</SkillItem>
+							)
+						})
+					}
+				</Skills>
 			</Article>
 		);
 	};
+
+	const formatText = (texts) => {
+		return (
+			<ExpList>
+				{
+					texts.map((item, index) => {
+						return (
+							<div key={"key" + index}>
+								<ExpListTitle key={item.title}>
+									{item.title}
+								</ExpListTitle>
+								{
+									item.items.map((text, idx) => {
+										return <ExpListItem key={text + idx}>
+											{text}
+										</ExpListItem>
+									})
+								}
+							</div >
+						)
+					})
+				}
+			</ExpList>
+		)
+	}
 
 	const Experience = () => {
 		return (
@@ -80,7 +119,10 @@ const DashboardContent: React.FC = () => {
 							<div>
 								<ExperienceTitle>{item.TITLE}</ExperienceTitle>
 								<SubTitle>{item.SUBTITLE}</SubTitle>
-								<Text>{item.DESCRIPTION}</Text>
+								{
+									item.LIST ? formatText(item.DESCRIPTION)
+										: <Text>{item.DESCRIPTION}</Text>
+								}
 							</div>
 						</ExperienceContainer>
 					);

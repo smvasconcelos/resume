@@ -123,7 +123,7 @@ const SideBar: React.FC<{
 					</DescriptionContainer>
 				</InfoContainer>
 
-				<SkillsContainer>
+				{/* <SkillsContainer>
 					<SkillsTitle>{lang.SKILLS}</SkillsTitle>
 					<SkillItem>
 						<SkillInfo>{lang.ENGLISH}</SkillInfo>
@@ -145,7 +145,7 @@ const SideBar: React.FC<{
 						<SkillInfo>{lang.WEB}</SkillInfo>
 						{getSkillLevel(6.5)}
 					</SkillItem>
-				</SkillsContainer>
+				</SkillsContainer> */}
 
 				<SocialContainer>
 					<SocialItem

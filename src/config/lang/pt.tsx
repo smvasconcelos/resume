@@ -2,7 +2,7 @@ const pt = {
   LANGUAGE: "Idioma",
   NAME_HOLDER: "Nome",
   NAME: "Samuel Vasconcelos",
-  EXPERT: "Full Stack Developer",
+	EXPERT: "Front End Developer",
   BIRTH: "Data de Nascimento",
   BIRTH_: "09/12/1998",
   NATIONALITY: "Nacionalidade",
@@ -25,48 +25,93 @@ const pt = {
   PROJECTS: "Projetos Pessoais",
   SECTIONS: {
     EXP: [
-      {
+			{
+				TITLE: "Desenvolvedor FullStack",
+				SUBTITLE: "TecnoJr | Dezembro de 2018 até Maio de 2022",
+				DATE: "2018 - 2022",
+				LIST: true,
+				DESCRIPTION: [
+					{
+						title: "Minhas atividades nessa empresa podem ser resumidas em alguns pontos:",
+						items: [
+							"Desenvolver telas coerentes e inovadoras",
+							"Produzir códigos limpos e reutilizáveis",
+							"Trabalhar em equipe e utilizando uma metodologia ágil",
+							"Entrevistar o cliente para determinar os módulos de cada projeto",
+						],
+					},
+					{
+						title: "Principais tecnologias utilizadas nesta vaga:",
+						items: [
+							"Scrum",
+							"React Native",
+							"Web Development(html, css, javascript)",
+							"PHP",
+							"Wordpress",
+						],
+					},
+				]
+			},
+			{
+				TITLE: "Desenvolvedor FullStack",
+				SUBTITLE: "Softrends | Outubro de 2021 até Junho 2022",
+				DATE: "2021",
+				LIST: true,
+				DESCRIPTION: [
+					{
+						title: "Minhas atividades nessa empresa podem ser resumidas em alguns pontos:",
+						items: [
+							"Desenvolver telas coerentes e inovadoras",
+							"Produzir códigos limpos e reutilizáveis",
+							"Trabalhar em equipe e utilizando uma metodologia ágil",
+						]
+					},
+					{
+						title: "Principais tecnologias utilizadas nesta vaga:",
+						items: [
+							"React JS",
+							"React Native",
+							"Scrum",
+							"Node JS",
+							"Mockup (figma)",
+							"Web Development(html, css, javascript)",
+						]
+					},
+				]
+			},
+			{
         TITLE: "Desenvolvedor Mobile",
         SUBTITLE: "Bolsista PIBITI | Agosto de 2020 até Julho 2021",
         DATE: "2020 - 2021",
+				LIST: false,
         DESCRIPTION:
           "Projeto mobile desenvolvido utilizando React Native, que tem como intuito de mordenizar o processo de coleta do projeto ACCB (Acompanhamento de Custa da Cesta Básica), permite sincronizar com um sistema web ja existente e facilitar o processo de coleta pessoal que era realizado manualmente e depois inserido no sistema."
       },
       {
         TITLE: "Desenvolvedor Desktop",
         SUBTITLE: "Bolsista PIBITI | Agosto de 2020 até Julho 2021",
-        DATE: "2020 - 2021",
+				LIST: false,
+				DATE: "2020 - 2021",
         DESCRIPTION:
           "Projeto desktop desenvolvido em python, este que tem como objetivo facilitar o processo de aquisição de informação do projeto ACCB (Acompanhamento de Custa da Cesta Básica), tem como principal função realizar um processo de Scrapping na plataforma Preço da Hora - Bahia e devolver uma coleção de arquivos Excel formatados, estes que serão posteriormente inseridos no sistema."
       },
-      {
-        TITLE: "Desenvolvedor FullStack",
-        SUBTITLE: "TecnoJr | Dezembro de 2018 até o presente",
-        DATE: "2018",
+			{
+				TITLE: "Gerente de Capacitação",
+				SUBTITLE: "TecnoJr | Janeiro de 2019 até Dezembro de 2019",
+				DATE: "2019 - 2019",
+				LIST: false,
+				DESCRIPTION:
+					"Responsável pelo processo de treinamento de trainees da empresa junior de computação TecnoJr, ministrando aulas de vários tópicos, tais como : html, css, js, php, react native, wordpress."
+			},
+
+			{
+				TITLE: "NASA Space Apps",
+				SUBTITLE: "UEFS | 19 à 20 de Outubro de 2019",
+				DATE: "2019 - 2019",
+				LIST: false,
         DESCRIPTION:
-          "Densenvolvo aplicações web e mobile como membro da empresa junior de computação TecnoJr."
-      },
-      {
-        TITLE: "Gerente de Capacitação",
-        SUBTITLE: "TecnoJr | Janeiro de 2019 até Dezembro de 2019",
-        DATE: "2019 - 2019",
-        DESCRIPTION:
-          "Responsável pelo processo de treinamento de trainees da empresa junior de computação TecnoJr, ministrando aulas de vários tópicos, tais como : html, css, js, php, react native, wordpress."
-      },
-      {
-        TITLE: "NASA Space Apps",
-        SUBTITLE: "UEFS | 19 à 20 de Outubro de 2019",
-        DATE: "2019 - 2019",
-        DESCRIPTION:
-          "Evento internacional organizado pela NASA. Foi alcaçando juntamente com minha equipe o quinto lugar durante a etapa da competição realizada na universidade."
-      },
-      {
-        TITLE: "Desenvolvedor FullStack",
-				SUBTITLE: "Softrends | Outubro de 2021 até Junho 2022",
-        DATE: "2021",
-        DESCRIPTION:
-          "Este cargo consiste em auxiliar com a etapa de planejamento de telas das aplicações e em seguida desenvolve-las utilizando as ferramentas React JS, React Native, Node JS, entre outras."
-      }
+					"Evento internacional organizado pela NASA. Foi alcaçando juntamente com minha equipe o quinto lugar durante a etapa da competição realizada na universidade."
+			}
     ],
     PROJECTS: [
       {
@@ -101,7 +146,11 @@ const pt = {
         DESCRIPTION:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa quaerat est odio, quos sint voluptatem. Natus ipsum rerum est odio. Eaque laudantium iusto sunt labore adipisci, cupiditate corrupti dolorum molestiae?"
       }
-    ]
+		],
+		SKILLS: [
+			"React JS", "React Native", "Python", "TypeScript", "Web Development", "Scrum", "PHP", "Node", "JS",
+			"Mockup", "MYSQL", "Firebase", "Inglês", "Aprendizado Ágil",
+		]
   }
 };
 

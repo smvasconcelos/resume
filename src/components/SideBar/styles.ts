@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import colors from "constants/colors";
 import fonts from "constants/fonts";
 
@@ -8,6 +8,9 @@ export const DashContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
+  @media screen and (max-width: 600px) {
+		padding-top: 2em;
+	}
 `;
 
 export const FixedContent = styled.div<{ fixed: boolean }>`
@@ -327,8 +330,19 @@ export const SocialTextDescription = styled.span`
   }
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
 export const SideBarContainer = styled.div`
   z-index: 5;
+	top: 0;
   height: 100%;
   min-height: 100vh;
   width: 100%;
@@ -339,6 +353,7 @@ export const SideBarContainer = styled.div`
   align-items: center;
   background-color: ${colors.gray_darker};
   overflow: auto;
+	animation: ${fadeIn} .3s linear;
 `;
 
 export const CloseContainer = styled.div`

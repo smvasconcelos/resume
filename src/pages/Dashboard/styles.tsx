@@ -46,6 +46,34 @@ export const Title = styled.p`
   margin: 0;
 `;
 
+export const Skills = styled.div`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	justify-content: start;
+	align-items: center;
+`
+
+export const SkillItem = styled.p`
+  text-transform: uppercase;
+  ${fonts.text};
+  color: ${colors.gray_darker};
+	background-color: ${colors.green};
+	margin: 1em;
+  font-size: 12px;
+	padding: 1em 1.5em;
+	border-radius: 5px;
+	font-weight: bold;
+	/* border: 1px solid ${colors.gray_darker}; */
+  @media screen and (min-width: 320px) {
+    font-size: calc(10 + 6 * ((100vw - 320px) / 680));
+  }
+  @media screen and (min-width: 1000px) {
+    font-size: 12px;
+  }
+`;
+
 export const SubTitle = styled.p`
   /* ${fonts.subtitle}; */
   font-weight: normal;
@@ -76,6 +104,17 @@ export const Text = styled.p`
     font-size: 18px;
   }
 `;
+
+export const ExpList = styled.ul`
+
+`
+
+export const ExpListItem = styled.li`
+
+`
+export const ExpListTitle = styled.h4`
+	margin-left: 0;
+`
 
 export const Divider = styled.div`
   margin: 0.5em 0 1em 0;
