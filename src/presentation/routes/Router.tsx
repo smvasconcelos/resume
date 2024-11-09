@@ -3,7 +3,7 @@ import { userRoutes } from './user.routes';
 
 export function Router(): JSX.Element {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/resume/'>
       <Routes>{userRoutes}</Routes>
     </BrowserRouter>
   );
