@@ -12,7 +12,7 @@
     "commit": "git-cz",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@remixicon/react": "^4.2.0",
