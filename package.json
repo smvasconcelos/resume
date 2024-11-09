@@ -1,14 +1,17 @@
 {
   "name": "resume",
-  "private": true,
-  "version": "0.0.0",
+  "homepage": "https://myusername.github.io/resume",
+  "private": false,
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "commit": "git-cz",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@remixicon/react": "^4.2.0",
@@ -24,6 +27,7 @@
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "framer-motion": "^11.11.11",
+    "gh-pages": "^6.2.0",
     "gotham-fonts": "^1.0.3",
     "i18next": "^23.12.3",
     "react": "^18.3.1",
@@ -110,5 +114,17 @@
         }
       }
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
