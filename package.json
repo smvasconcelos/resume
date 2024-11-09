@@ -1,0 +1,114 @@
+{
+  "name": "resume",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "commit": "git-cz",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@remixicon/react": "^4.2.0",
+    "@tanstack/react-query": "^5.51.15",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/webfontloader": "^1.6.38",
+    "antd": "^5.19.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^17.10.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^7.0.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "framer-motion": "^11.11.11",
+    "gotham-fonts": "^1.0.3",
+    "i18next": "^23.12.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.0.1",
+    "react-popper": "^2.3.0",
+    "react-router-dom": "^6.25.1",
+    "react-syntax-highlighter": "^15.6.1",
+    "react-toastify": "^10.0.5",
+    "styled-components": "^6.1.12",
+    "use-debounce": "^10.0.4",
+    "vite-plugin-svgr": "^4.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "19.2.1",
+    "@commitlint/config-conventional": "19.1.0",
+    "@types/antd": "^1.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-query": "^1.2.9",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "lint-staged": "15.2.2",
+    "stylelint": "16.3.1",
+    "stylelint-config-standard": "36.0.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.4",
+    "vite-tsconfig-paths": "^4.3.2"
+  },
+  "lint-staged": {
+    "src/**/*.@(js|jsx|ts|tsx|html|css)": "prettier --write --max-warnings=0",
+    "src/**/*.@(js|jsx|ts|tsx)": [
+      "eslint --max-warnings=0"
+    ],
+    "**/*.ts": [
+      "stylelint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "types": {
+        "feat": {
+          "title": "feat",
+          "description": "Adiciona uma nova funcionalidade."
+        },
+        "fix": {
+          "title": "fix",
+          "description": "Corrige um bug."
+        },
+        "docs": {
+          "title": "docs",
+          "description": "Mudanças em documentações."
+        },
+        "style": {
+          "title": "style",
+          "description": "Modifica apenas o estilo do código (ponto e virgula, identação, etc.)."
+        },
+        "refactor": {
+          "title": "refactor",
+          "description": "Refatora alguma parte do código, sem adicionar testes ou funcionalidades."
+        },
+        "revert": {
+          "title": "revert",
+          "description": "Reverte algum commit."
+        },
+        "merge": {
+          "title": "merge",
+          "description": "Faz o merge de uma branch em outra."
+        },
+        "test": {
+          "title": "test",
+          "description": "Adiciona testes."
+        },
+        "chore": {
+          "title": "chore",
+          "description": "Modifica alguma configuração fora da src, no chore da aplicação (eslint, prettier, etc.)"
+        }
+      }
+    }
+  }
+}

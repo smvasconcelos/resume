@@ -1,0 +1,60 @@
+{
+    "extends": ["stylelint-config-standard"],
+    "customSyntax": "postcss-styled-syntax",
+    "rules": {
+      "selector-class-pattern": null,
+      "declaration-property-unit-allowed-list": {
+        "/^border|box-shadow/": ["px", "%"],
+        "/^padding|^gap|^margin|font-size/": ["rem", "%"],
+        "/width|height|top|left|right|bottom|line-height/": [
+          "rem",
+          "vw",
+          "vh",
+          "%"
+        ]
+      },
+      "unit-allowed-list": [
+        "%",
+        "px",
+        "rem",
+        "ms",
+        "s",
+        "vh",
+        "vw",
+        "deg",
+        "fr",
+        "rad"
+      ],
+      "comment-empty-line-before": [
+        "always",
+        {
+          "except": ["first-nested"],
+          "ignore": ["after-comment"]
+        }
+      ],
+      "at-rule-empty-line-before": [
+        "always",
+        {
+          "except": ["first-nested"],
+          "ignore": ["after-comment"]
+        }
+      ],
+      "rule-empty-line-before": [
+        "always",
+        {
+          "except": ["first-nested"],
+          "ignore": ["after-comment"]
+        }
+      ],
+      "declaration-empty-line-before": null,
+      "color-hex-length": null,
+      "font-family-name-quotes": null,
+      "media-feature-name-allowed-list": ["max-width", "min-width", "max-height"],
+      "at-rule-disallowed-list": ["keyframes"],
+      "media-feature-range-notation": ["prefix"],
+      "no-descending-specificity": null,
+      "no-empty-source": null,
+      "media-query-no-invalid": null,
+      "declaration-block-no-redundant-longhand-properties": null
+    }
+  }
