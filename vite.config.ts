@@ -27,5 +27,6 @@ export default defineConfig({
   publicDir: 'public-assets',
   optimizeDeps: {
     include: ['react']
-  }
+  },
+  base: '/resume/'
 });
