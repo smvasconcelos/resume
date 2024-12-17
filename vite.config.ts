@@ -24,7 +24,7 @@ export default defineConfig({
     assetsDir: 'assets-frontend',
     sourcemap: true
   },
-  publicDir: 'public-assets',
+  publicDir: 'public',
   optimizeDeps: {
     include: ['react']
   },
