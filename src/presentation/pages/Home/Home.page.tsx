@@ -1,12 +1,12 @@
 import { routesHashes } from 'presentation/components/Navbar/Navbar.component';
 import { ProgressBar } from 'presentation/components/ProgressBar/ProgressBar.component';
 import { DefaultTemplate } from 'presentation/template';
+import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { Icons } from 'shared/assets/icons';
 import { animations } from 'shared/styles/animations';
-import { useTranslation } from 'react-i18next';
 
-import { AnimatePresence, useAnimation } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { CustomTabs } from 'presentation/components/CustomTabs/CustomTabs.component';
 import { SyntaxHighlight } from 'presentation/components/SyntaxHighlight/SyntaxHighlight.component';
 import { useEffect, useState } from 'react';
@@ -51,24 +51,6 @@ export function Home(): JSX.Element {
     {
       title: t('landingPageTitle'),
       description: t('landingPageDescription'),
-      githubLink: '',
-      previewLink: ''
-    },
-    {
-      title: t('accessibilityTitle'),
-      description: t('accessibilityDescription'),
-      githubLink: '',
-      previewLink: ''
-    },
-    {
-      title: t('spaTitle'),
-      description: t('spaDescription'),
-      githubLink: '',
-      previewLink: ''
-    },
-    {
-      title: t('trelloCloneTitle'),
-      description: t('trelloCloneDescription'),
       githubLink: '',
       previewLink: ''
     }
@@ -141,7 +123,12 @@ export function Home(): JSX.Element {
               </HeaderAbout>
 
               <AboutContentContainer>
-                <AboutProfile />
+                <AboutProfile>
+                  <img
+                    src='src/shared/assets/images/me.jpg'
+                    alt=''
+                  />
+                </AboutProfile>
 
                 <AboutContent>
                   <ContentAbout>{t('aboutMeDescription')}</ContentAbout>

@@ -14,6 +14,10 @@ export const Container = styled.div`
   padding: 1rem;
   transition: all 250ms ease-in-out;
   z-index: 2;
+
+  @media only screen and (max-width: 870px) {
+    flex-direction: column;
+  }
 `;
 
 export const NavbarItem = styled.a<NavItemStylesType>`
@@ -44,6 +48,11 @@ export const NavbarItem = styled.a<NavItemStylesType>`
       color: ${({ theme }) => theme.brandSecondaryColor};
       border-color: ${({ theme }) => theme.highLightColor};
     `}
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
 `;
 
 export const NavbarContainer = styled.div`
@@ -52,6 +61,10 @@ export const NavbarContainer = styled.div`
   gap: 1.5rem;
   align-items: flex-end;
   justify-content: center;
+
+  @media only screen and (max-width: 560px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -69,6 +82,11 @@ export const LogoName = styled.h1`
   text-align: center;
   font-family: ${({ theme }) => theme.primaryFontFamily};
   color: ${({ theme }) => theme.highLightColor};
+
+  @media only screen and (max-width: 560px) {
+    font-size: 2.2rem;
+    line-height: 1.84rem;
+  }
 `;
 
 export const LogoClosure = styled.h1`

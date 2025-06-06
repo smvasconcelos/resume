@@ -46,4 +46,16 @@ export const TabItem = styled.span<CustomTabsStylesType>`
     css`
       background-color: ${({ theme }) => theme.highLightColor};
     `}
+
+  @media only screen and (max-width: 1368px) {
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    padding: 1.2rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    padding: 0.8rem;
+  }
 `;

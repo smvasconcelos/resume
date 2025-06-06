@@ -5,7 +5,7 @@ import { ImplementationsStylesType } from './Home.types';
 export const Container = styled(motion.div)`
   height: 100%;
   width: 100%;
-  padding: 0 10vh;
+  padding: 0 10vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,6 +16,14 @@ export const Container = styled(motion.div)`
     top: 0;
     left: -10px;
   }
+
+  @media only screen and (max-width: 810px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 560px) {
+    padding: 0 3vw;
+  }
 `;
 
 export const StartContainer = styled(motion.div)`
@@ -24,6 +32,14 @@ export const StartContainer = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   gap: 4rem;
+
+  @media only screen and (max-width: 760px) {
+    gap: 2.5rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    gap: 1rem;
+  }
 `;
 
 export const Header = styled.h1`
@@ -45,10 +61,20 @@ export const Header = styled.h1`
     -webkit-text-fill-color: transparent;
   }
 
-  @media only screen and (max-width: 1360px) {
+  @media only screen and (max-width: 1368px) {
     width: 100%;
     font-size: 5.4rem;
     line-height: 6.6rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 4.4rem;
+    line-height: 4.6rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
   }
 `;
 
@@ -61,9 +87,20 @@ export const HeaderContent = styled.span`
   text-align: left;
   width: 30%;
 
-  @media only screen and (max-width: 1360px) {
+  @media only screen and (max-width: 1368px) {
     width: 50%;
     font-size: 1.5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 2rem;
   }
 `;
 
@@ -97,8 +134,20 @@ export const HeaderButton = styled(motion.button)`
     }
   }
 
-  @media only screen and (max-width: 1360px) {
+  @media only screen and (max-width: 1368px) {
     font-size: 1.5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: 6.6rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    padding: 0 2rem;
+    line-height: 4.6rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -117,24 +166,27 @@ export const AboutContainer = styled(motion.div)`
   border-top: 1px solid ${({ theme }) => theme.highLightColor};
   box-shadow: 10px 11px 29px 0px rgba(0, 0, 0, 0.75);
 
-  @media only screen and (max-width: 1360px) {
+  @media only screen and (max-width: 1368px) {
     width: 100%;
-
-    h1 {
-      font-size: 5.4rem;
-    }
+    max-height: 70vh;
   }
 
   @media only screen and (max-width: 1100px) {
-    max-height: 70vh;
     overflow: auto;
     justify-content: flex-start;
+    max-height: 65vh;
 
     > div {
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
+  }
+
+  @media only screen and (max-width: 560px) {
+    padding: 2rem;
+    width: 100%;
+    max-height: 60vh;
   }
 `;
 
@@ -144,18 +196,34 @@ export const AboutContentContainer = styled.div`
   align-items: start;
   justify-content: center;
   gap: 4rem;
+
+  @media only screen and (max-width: 1100px) {
+    gap: 0;
+  }
 `;
 
 export const AboutProfile = styled.div`
-  background-color: ${({ theme }) => theme.highLightColor};
   height: 100%;
   min-width: 30rem;
   min-height: 30rem;
-  border-radius: 5px;
 
-  @media only screen and (max-width: 1360px) {
-    min-width: 30rem;
+  img {
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+  }
+
+  @media only screen and (max-width: 1368px) {
+    min-width: 20rem;
     min-height: 20rem;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    min-width: unset;
+    min-height: unset;
+    width: 50%;
+
+    margin-bottom: 1rem;
   }
 `;
 
@@ -168,6 +236,18 @@ export const AboutContent = styled.div`
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  @media only screen and (max-width: 1368px) {
+    > div {
+      gap: 1rem;
+    }
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 `;
 
@@ -191,6 +271,23 @@ export const HeaderAbout = styled.h1`
       opacity: 0;
     }
   }
+
+  @media only screen and (max-width: 1368px) {
+    font-size: 5.4rem;
+    line-height: 6.6rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 3.4rem;
+    line-height: 4.6rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    width: 100%;
+    font-size: 2.4rem;
+    line-height: 4.6rem;
+  }
 `;
 
 export const ContentAbout = styled.span`
@@ -200,6 +297,11 @@ export const ContentAbout = styled.span`
   font-weight: 400;
   line-height: 2.6rem;
   text-align: justify;
+
+  @media only screen and (max-width: 1368px) {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
 `;
 
 export const ContentAboutTag = styled.span`
@@ -212,8 +314,10 @@ export const ContentAboutTag = styled.span`
   text-align: left;
   border: 1px solid ${({ theme }) => theme.highLightColor};
 
-  @media only screen and (max-width: 1360px) {
-    font-size: 1.5rem;
+  @media only screen and (max-width: 1368px) {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    padding: 1rem;
   }
 `;
 
@@ -225,6 +329,10 @@ export const ExperienceContainer = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 4rem;
+
+  @media only screen and (max-width: 560px) {
+    padding: 2rem;
+  }
 `;
 
 export const ExperienceTitle = styled.h3`
@@ -234,21 +342,46 @@ export const ExperienceTitle = styled.h3`
   line-height: 2.6rem;
   font-weight: 700;
   text-align: left;
+
+  @media only screen and (max-width: 1368px) {
+    font-size: 2rem;
+    line-height: 1.6rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1.3rem;
+    line-height: 1rem;
+  }
 `;
 
 export const ExperienceContent = styled.span`
   font-family: ${({ theme }) => theme.secondaryFontFamily};
   color: ${({ theme }) => theme.neutralColorDark};
   font-size: 1.6rem;
-  line-height: 2rem;
+  line-height: 3rem;
   text-align: justify;
   font-weight: 400;
+
+  @media only screen and (max-width: 1368px) {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1rem;
+    line-height: normal;
+    text-align: left;
+  }
 `;
 
 export const ProjectPreview = styled.div`
   width: 100%;
   height: 13.5rem;
   background-color: ${({ theme }) => theme.highLightColor};
+
+  @media only screen and (max-width: 560px) {
+    height: 8rem;
+  }
 `;
 
 export const ProjectsContainer = styled.div`
@@ -261,7 +394,7 @@ export const ProjectsContainer = styled.div`
   margin: 0 auto;
   padding-bottom: 2rem;
 
-  @media only screen and (max-width: 1360px) {
+  @media only screen and (max-width: 1368px) {
     width: 100%;
     overflow: auto;
     justify-content: unset;
@@ -283,6 +416,14 @@ export const ProjectContainer = styled(motion.div)`
   border-top: 2px solid ${({ theme }) => theme.highLightColor};
   min-height: 39rem;
   box-shadow: 10px 11px 29px 0px rgba(0, 0, 0, 0.75);
+
+  @media only screen and (max-width: 560px) {
+    gap: 1rem;
+    padding: 1rem;
+    width: 20rem;
+    min-width: 20rem;
+    min-height: 20rem;
+  }
 `;
 
 export const ProjectTitle = styled.span`
@@ -291,6 +432,10 @@ export const ProjectTitle = styled.span`
   font-size: 1.5rem;
   text-align: center;
   font-weight: 600;
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const ProjectContent = styled.span`
@@ -305,6 +450,10 @@ export const ProjectContent = styled.span`
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -313,6 +462,10 @@ export const ButtonContainer = styled.div`
   width: 100%;
   justify-content: end;
   gap: 2rem;
+
+  @media only screen and (max-width: 560px) {
+    gap: 1rem;
+  }
 `;
 
 export const PreviewButton = styled.a`
@@ -325,6 +478,10 @@ export const PreviewButton = styled.a`
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1rem;
+  }
 `;
 
 export const GithubButton = styled.a`
@@ -337,6 +494,10 @@ export const GithubButton = styled.a`
   padding: 1rem;
   cursor: pointer;
   text-decoration: none;
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ImplementationsContainer = styled.div<ImplementationsStylesType>`
@@ -347,6 +508,7 @@ export const ImplementationsContainer = styled.div<ImplementationsStylesType>`
   gap: 4rem;
   flex-wrap: wrap;
   margin: 0 auto;
+  z-index: 9;
 
   ${({ $active }) =>
     $active &&
@@ -402,6 +564,31 @@ export const ImplementationContainer = styled(
     }
   }
 
+  @media only screen and (max-width: 560px) {
+    > span:first-of-type {
+      text-align: left;
+      font-size: 1.3rem;
+    }
+
+    pre {
+      overflow: unset !important;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      max-height: 30rem;
+      overflow-y: scroll !important;
+
+      > code {
+        width: 100%;
+      }
+
+      > code > span {
+        display: block !important;
+        width: 100% !important;
+      }
+    }
+  }
+
   ${({ $active }) =>
     $active &&
     css`
@@ -410,4 +597,9 @@ export const ImplementationContainer = styled(
       margin: 0 auto;
       display: flex !important;
     `}
+
+  @media only screen and (max-width: 560px) {
+    gap: 1rem;
+    padding: 1.5rem;
+  }
 `;
