@@ -17,7 +17,6 @@ export const routesHashes = [
   '#start',
   '#about',
   '#experience',
-  '#projects',
   '#implementations'
 ];
 
@@ -81,13 +80,6 @@ export function Navbar(): JSX.Element {
           href='#experience'
         >
           {t('carrear')}
-        </NavbarItem>
-
-        <NavbarItem
-          $active={hash === '#projects'}
-          href='#projects'
-        >
-          {t('projects')}
         </NavbarItem>
 
         <NavbarItem
