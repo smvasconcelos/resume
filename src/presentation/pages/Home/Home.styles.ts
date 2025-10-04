@@ -152,7 +152,8 @@ export const HeaderButton = styled(motion.button)`
 `;
 
 export const AboutContainer = styled(motion.div)`
-  width: 80%;
+  width: 100%;
+  max-height: 70vh;
   max-width: 100rem;
   height: fit-content;
   display: flex;
@@ -166,7 +167,7 @@ export const AboutContainer = styled(motion.div)`
   border-top: 1px solid ${({ theme }) => theme.highLightColor};
   box-shadow: 10px 11px 29px 0px rgba(0, 0, 0, 0.75);
 
-  @media only screen and (max-width: 1368px) {
+  @media only screen and (max-width: 1760px) {
     width: 100%;
     max-height: 70vh;
   }
@@ -181,12 +182,12 @@ export const AboutContainer = styled(motion.div)`
       justify-content: center;
       align-items: center;
     }
-  }
 
-  @media only screen and (max-width: 560px) {
+    margin-top: 110px;
     padding: 2rem;
     width: 100%;
-    max-height: 60vh;
+    max-height: 90vh;
+    gap: 1rem;
   }
 `;
 
@@ -219,8 +220,7 @@ export const AboutProfile = styled.div`
   }
 
   @media only screen and (max-width: 1100px) {
-    min-width: unset;
-    min-height: unset;
+    max-width: 20rem;
     width: 50%;
 
     margin-bottom: 1rem;
@@ -235,8 +235,13 @@ export const AboutContent = styled.div`
   > div {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  svg {
+    width: 5rem;
+    height: 5rem;
   }
 
   @media only screen and (max-width: 1368px) {
@@ -255,14 +260,14 @@ export const HeaderAbout = styled.h1`
   width: 65%;
   font-family: ${({ theme }) => theme.primaryFontFamily};
   color: ${({ theme }) => theme.neutralColor};
-  font-size: 6.4rem;
   font-weight: 700;
-  line-height: 7.6rem;
+  font-size: 5.4rem;
+  line-height: 6.6rem;
 
   span {
     opacity: 1;
     animation: blinker 1.3s linear infinite;
-    margin-left: -2rem;
+    margin-left: -8px;
     letter-spacing: -5px;
   }
 
@@ -277,7 +282,7 @@ export const HeaderAbout = styled.h1`
     line-height: 6.6rem;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1100px) {
     width: 100%;
     font-size: 3.4rem;
     line-height: 4.6rem;
@@ -293,7 +298,7 @@ export const HeaderAbout = styled.h1`
 export const ContentAbout = styled.span`
   font-family: ${({ theme }) => theme.secondaryFontFamily};
   color: ${({ theme }) => theme.neutralColor};
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 400;
   line-height: 2.6rem;
   text-align: justify;
@@ -307,8 +312,8 @@ export const ContentAbout = styled.span`
 export const ContentAboutTag = styled.span`
   font-family: ${({ theme }) => theme.secondaryFontFamily};
   color: ${({ theme }) => theme.neutralColor};
-  font-size: 2rem;
-  line-height: 2.6rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   padding: 1rem;
   border-radius: 5px;
   text-align: left;
@@ -316,7 +321,7 @@ export const ContentAboutTag = styled.span`
 
   @media only screen and (max-width: 1368px) {
     font-size: 1rem;
-    line-height: 1.6rem;
+    line-height: 1rem;
     padding: 1rem;
   }
 `;

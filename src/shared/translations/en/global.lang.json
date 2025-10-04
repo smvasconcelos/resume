@@ -19,13 +19,14 @@
   "vexpenses": "Vexpenses",
   "vexpensesDescription": "Currently, I work as a Front-end Developer at Vexpenses, where I am responsible for transforming designs into interactive and efficient web interfaces. I use React JS and Typescript to build reusable and scalable components. My experience in agile methodologies and tools like Jira allows me to collaborate effectively in remote teams and deliver projects with quality and on time.",
   "aboutMe": "About me",
-  "aboutMeDescription": "Front-end Developer with solid experience in React JS and Typescript. I have a proven track record of building intuitive and performant web interfaces, translating designs into clean and well-structured code. With a degree in Computer Science, I have a solid foundation in programming fundamentals and problem-solving. My focus is to specialize further in the area to reach my next level.",
+  "aboutMeDescription": "Fullstack Developer with solid experience in React JS, Typescript, PHP, Laravel, and Node.js. In recent years, I have worked on the development and maintenance of a SaaS platform built mainly with Laravel, React, and Node, focusing on implementing new features and improving the user experience. <br/> During this time, I dealt with complex business rules embedded in the code and communication between multiple internal services. I contributed to performance optimization in legacy systems through research and improvements, as well as refactoring outdated interfaces into modern and scalable solutions using React, Typescript, and Node.",
   "about": "About",
   "carrear": "Career",
   "projects": "Projects",
   "implementations": "Implementations",
   "frontendDev": "Frontend Developer,",
+  "fullstackDev": "Fullstack Developer,",
   "transforming": "transforming",
-  "designsInto": "designs into exceptional digital experiences.",
-  "implementingRobustSolutions": "Implementing scalable and robust front-end solutions, ready to meet business growth."
+  "designsInto": "ideas into exceptional digital experiences.",
+  "implementingRobustSolutions": "Implementing scalable and robust web solutions, ready to meet business growth."
 }

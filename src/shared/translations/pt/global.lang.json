@@ -19,13 +19,14 @@
   "vexpenses": "Vexpenses",
   "vexpensesDescription": "Atualmente, trabalho como Desenvolvedor Front-end na Vexpenses, onde sou responsável por transformar designs em interfaces web interativas e eficientes. Utilizo React JS e Typescript para construir componentes reutilizáveis e escaláveis. Minha experiência em metodologias ágeis e ferramentas como Jira me permite colaborar de forma eficaz em equipes remotas e entregar projetos com qualidade e dentro do prazo.",
   "aboutMe": "Sobre mim",
-  "aboutMeDescription": "Desenvolvedor Front-end com sólida experiência em React JS e Typescript. Possuo um histórico comprovado na construção de interfaces web intuitivas e performáticas, traduzindo designs para código limpo e bem estruturado. Formado em Ciência da Computação, possuo uma base sólida em fundamentos de programação e resolução de problemas. Tenho como foco me especializar ainda mais na área para atingir meu próximo nível.",
+  "aboutMeDescription": "Nos últimos anos, atuei no desenvolvimento e manutenção de uma plataforma SaaS construída principalmente com Laravel, React e Node, com foco em implementar novas funcionalidades e melhorar a experiência do usuário. Durante esse período, trabalhei com regras de negócio complexas acopladas ao código e com a comunicação entre múltiplos serviços internos. Contribuí para a melhoria de performance de sistemas legados por meio de estudos e otimizações, além de refatorar telas antigas para soluções modernas e escaláveis utilizando React, Typescript e Node.",
   "about": "Sobre",
   "carrear": "Careira",
   "projects": "Projetos",
   "implementations": "Implementações",
   "frontendDev": "Desenvolvedor Frontend,",
+  "fullstackDev": "Desenvolvedor FullStack,",
   "transforming": "transformando",
-  "designsInto": "designs em experiências digitais excepcionais.",
-  "implementingRobustSolutions": "Implementando soluções front-end escaláveis e robustas, prontas para atender ao crescimento do negócio."
+  "designsInto": "ideias em experiências digitais excepcionais.",
+  "implementingRobustSolutions": "Implementando soluções escaláveis e robustas, prontas para atender ao crescimento do negócio."
 }

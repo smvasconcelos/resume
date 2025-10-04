@@ -1,7 +1,7 @@
 import { routesHashes } from 'presentation/components/Navbar/Navbar.component';
 import { ProgressBar } from 'presentation/components/ProgressBar/ProgressBar.component';
 import { DefaultTemplate } from 'presentation/template';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { Icons } from 'shared/assets/icons';
 import { animations } from 'shared/styles/animations';
@@ -10,6 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 import { CustomTabs } from 'presentation/components/CustomTabs/CustomTabs.component';
 import { SyntaxHighlight } from 'presentation/components/SyntaxHighlight/SyntaxHighlight.component';
 import { useEffect, useState } from 'react';
+import profileImage from 'src/shared/assets/images/me.jpg';
 import {
   AboutContainer,
   AboutContent,
@@ -22,7 +23,6 @@ import {
   ExperienceContainer,
   ExperienceContent,
   ExperienceTitle,
-  GithubButton,
   Header,
   HeaderAbout,
   HeaderButton,
@@ -30,14 +30,11 @@ import {
   ImplementationContainer,
   ImplementationsContainer,
   PreviewButton,
-  ProjectContainer,
   ProjectContent,
-  ProjectPreview,
-  ProjectsContainer,
   ProjectTitle,
   StartContainer
 } from './Home.styles';
-import { IImplementations, IProjects, IWorks } from './Home.types';
+import { IImplementations, IWorks } from './Home.types';
 
 export function Home(): JSX.Element {
   const { hash } = useLocation();
@@ -46,15 +43,6 @@ export function Home(): JSX.Element {
 
   const percentageIndex =
     hash === '' ? 1 : routesHashes.findIndex(item => item === hash) + 1;
-
-  const projects: IProjects[] = [
-    {
-      title: t('landingPageTitle'),
-      description: t('landingPageDescription'),
-      githubLink: '',
-      previewLink: ''
-    }
-  ];
 
   const works: IWorks[] = [
     {
@@ -101,7 +89,7 @@ export function Home(): JSX.Element {
           {percentageIndex === 1 && (
             <StartContainer {...animations.popInFade}>
               <Header>
-                {t('frontendDev')} <br /> <span>{t('transforming')}</span>{' '}
+                {t('fullstackDev')} <br /> <span>{t('transforming')}</span>{' '}
                 {t('designsInto')}
               </Header>
 
@@ -125,17 +113,26 @@ export function Home(): JSX.Element {
               <AboutContentContainer>
                 <AboutProfile>
                   <img
-                    src='src/shared/assets/images/me.jpg'
-                    alt=''
+                    src={profileImage}
+                    alt='Profile Image'
                   />
                 </AboutProfile>
 
                 <AboutContent>
-                  <ContentAbout>{t('aboutMeDescription')}</ContentAbout>
+                  <ContentAbout>
+                    <Trans
+                      t={t}
+                      i18nKey='aboutMeDescription'
+                      components={{ br: <br /> }}
+                    />
+                  </ContentAbout>
 
                   <div>
-                    <ContentAboutTag>Frontend Developer</ContentAboutTag>
-                    <ContentAboutTag>SPA</ContentAboutTag>
+                    <ContentAboutTag>React</ContentAboutTag>
+                    <ContentAboutTag>Typescript</ContentAboutTag>
+                    <ContentAboutTag>Node</ContentAboutTag>
+                    <ContentAboutTag>PHP</ContentAboutTag>
+                    <ContentAboutTag>Laravel</ContentAboutTag>
                   </div>
 
                   <div>
@@ -144,7 +141,9 @@ export function Home(): JSX.Element {
                     <Icons.Js />
                     <Icons.Html />
                     <Icons.Css />
-                    <Icons.Git />
+                    <Icons.NodeJs />
+                    <Icons.Php />
+                    <Icons.Laravel />
                   </div>
                 </AboutContent>
               </AboutContentContainer>
@@ -169,41 +168,6 @@ export function Home(): JSX.Element {
 
         <AnimatePresence>
           {percentageIndex === 4 && (
-            <AnimatePresence>
-              <ProjectsContainer>
-                {projects.map(project => {
-                  return (
-                    <ProjectContainer
-                      key={project.description}
-                      {...animations.slideFromRightToLeft}
-                    >
-                      <ProjectPreview></ProjectPreview>
-                      <ProjectTitle>{project.title}</ProjectTitle>
-                      <ProjectContent>{project.description}</ProjectContent>
-                      <ButtonContainer>
-                        <PreviewButton
-                          href={project.previewLink}
-                          target='_blank'
-                        >
-                          Preview
-                        </PreviewButton>
-                        <GithubButton
-                          href={project.githubLink}
-                          target='_blank'
-                        >
-                          Github
-                        </GithubButton>
-                      </ButtonContainer>
-                    </ProjectContainer>
-                  );
-                })}
-              </ProjectsContainer>
-            </AnimatePresence>
-          )}
-        </AnimatePresence>
-
-        <AnimatePresence>
-          {percentageIndex === 5 && (
             <ImplementationsContainer $active={implementationVisible !== -1}>
               {implementations.map((project, idx) => {
                 return (
