@@ -62,22 +62,6 @@ export function Home(): JSX.Element {
     }
   ];
 
-  const implementations: IImplementations[] = [
-    {
-      title: t('nestedArticleTitle'),
-      description: t('nestedArticleSummary'),
-      codeString: `export type NestedKeysType<T, S extends string> = T extends object
-      ? S extends \`$\{infer K1\}.\${infer K2\}\`
-        ? K1 extends keyof T
-          ? T[K1] extends object
-            ? \`$\{K1\}.\$\{NestedKeysType<T[K1], K2>\}\`
-            : keyof T \& string
-          : keyof T \& string
-        : keyof T \& string
-      : '';`
-    }
-  ];
-
   useEffect(() => {
     setImplementationVisible(-1);
   }, [hash]);
@@ -163,48 +147,6 @@ export function Home(): JSX.Element {
                 );
               })}
             </CustomTabs>
-          )}
-        </AnimatePresence>
-
-        <AnimatePresence>
-          {percentageIndex === 4 && (
-            <ImplementationsContainer $active={implementationVisible !== -1}>
-              {implementations.map((project, idx) => {
-                return (
-                  <AnimatePresence
-                    key={`animate-${implementationVisible}-${idx}`}
-                  >
-                    <ImplementationContainer
-                      {...animations.popFadeInOut}
-                      $active={implementationVisible === idx}
-                    >
-                      <ProjectTitle>{project.title}</ProjectTitle>
-
-                      <ProjectContent>{project.description}</ProjectContent>
-
-                      {implementationVisible === idx && (
-                        <SyntaxHighlight codeString={project.codeString} />
-                      )}
-
-                      <ButtonContainer>
-                        <PreviewButton
-                          onClick={() => {
-                            if (implementationVisible === idx) {
-                              setImplementationVisible(-1);
-                              return;
-                            }
-
-                            setImplementationVisible(idx);
-                          }}
-                        >
-                          {implementationVisible === idx ? 'Close' : 'Preview'}
-                        </PreviewButton>
-                      </ButtonContainer>
-                    </ImplementationContainer>
-                  </AnimatePresence>
-                );
-              })}
-            </ImplementationsContainer>
           )}
         </AnimatePresence>
       </Container>

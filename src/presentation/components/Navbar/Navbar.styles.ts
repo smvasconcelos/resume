@@ -44,7 +44,6 @@ export const NavbarItem = styled.a<NavItemStylesType>`
       font-weight: 900;
       line-height: 2.4rem;
       text-align: center;
-      font-family: ${({ theme }) => theme.secondaryFontFamily};
       color: ${({ theme }) => theme.brandSecondaryColor};
       border-color: ${({ theme }) => theme.highLightColor};
     `}

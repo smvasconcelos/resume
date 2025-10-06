@@ -13,12 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { Icons } from 'shared/assets/icons';
 import i18next from 'i18next';
 
-export const routesHashes = [
-  '#start',
-  '#about',
-  '#experience',
-  '#implementations'
-];
+export const routesHashes = ['#start', '#about', '#experience'];
 
 export function Navbar(): JSX.Element {
   const { hash } = useLocation();
@@ -83,10 +78,10 @@ export function Navbar(): JSX.Element {
         </NavbarItem>
 
         <NavbarItem
-          $active={hash === '#implementations'}
-          href='#implementations'
+          target='_blank'
+          href={`https://smvasconcelos.github.io/devlogs/${i18next.language ?? 'en'}/`}
         >
-          {t('implementations')}
+          BLOG
         </NavbarItem>
 
         <LanguageContainer>
