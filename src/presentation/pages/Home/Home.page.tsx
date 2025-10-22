@@ -8,15 +8,12 @@ import { animations } from 'shared/styles/animations';
 
 import { AnimatePresence } from 'framer-motion';
 import { CustomTabs } from 'presentation/components/CustomTabs/CustomTabs.component';
-import { SyntaxHighlight } from 'presentation/components/SyntaxHighlight/SyntaxHighlight.component';
-import { useEffect, useState } from 'react';
-import profileImage from 'src/shared/assets/images/me.jpg';
+import profileImage from 'src/shared/assets/images/me_2.jpg';
 import {
   AboutContainer,
   AboutContent,
   AboutContentContainer,
   AboutProfile,
-  ButtonContainer,
   Container,
   ContentAbout,
   ContentAboutTag,
@@ -27,18 +24,12 @@ import {
   HeaderAbout,
   HeaderButton,
   HeaderContent,
-  ImplementationContainer,
-  ImplementationsContainer,
-  PreviewButton,
-  ProjectContent,
-  ProjectTitle,
   StartContainer
 } from './Home.styles';
-import { IImplementations, IWorks } from './Home.types';
+import { IWorks } from './Home.types';
 
 export function Home(): JSX.Element {
   const { hash } = useLocation();
-  const [implementationVisible, setImplementationVisible] = useState(-1);
   const { t } = useTranslation('global');
 
   const percentageIndex =
@@ -47,24 +38,20 @@ export function Home(): JSX.Element {
   const works: IWorks[] = [
     {
       tab: t('tecnoJrTab'),
-      description: t('tecnoJrDescription'),
+      description: 'tecnoJrDescription',
       title: t('tecnoJr')
     },
     {
       tab: t('softTrendsTab'),
-      description: t('softTrendsDescription'),
+      description: 'softTrendsDescription',
       title: t('softTrends')
     },
     {
       tab: t('vexpensesTab'),
-      description: t('vexpensesDescription'),
+      description: 'vexpensesDescription',
       title: t('vexpenses')
     }
   ];
-
-  useEffect(() => {
-    setImplementationVisible(-1);
-  }, [hash]);
 
   return (
     <DefaultTemplate>
@@ -142,7 +129,13 @@ export function Home(): JSX.Element {
                 return (
                   <ExperienceContainer key={item.title}>
                     <ExperienceTitle>{item.title}</ExperienceTitle>
-                    <ExperienceContent>{item.description}</ExperienceContent>
+                    <ExperienceContent>
+                      <Trans
+                        t={t}
+                        i18nKey={item.description}
+                        components={{ br: <br />, li: <li/>, ul: <ul/>, strong: <strong/> }}
+                      />
+                    </ExperienceContent>
                   </ExperienceContainer>
                 );
               })}

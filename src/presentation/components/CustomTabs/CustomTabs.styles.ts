@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 export const Container = styled.div`
   width: fit-content;
   margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    margin-top: 20vh;
+  }
 `;
 
 export const ContentContainer = styled(motion.div)`

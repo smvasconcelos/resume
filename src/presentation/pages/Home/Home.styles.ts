@@ -204,9 +204,9 @@ export const AboutContentContainer = styled.div`
 `;
 
 export const AboutProfile = styled.div`
-  height: 100%;
-  min-width: 30rem;
-  min-height: 30rem;
+  height: auto;
+  min-width: 21rem;
+  max-height: 31rem;
 
   img {
     width: 100%;
@@ -214,15 +214,12 @@ export const AboutProfile = styled.div`
     height: 100%;
   }
 
-  @media only screen and (max-width: 1368px) {
-    min-width: 20rem;
+  @media only screen and (max-width: 768px) {
+    min-width: 15rem;
     min-height: 20rem;
   }
 
   @media only screen and (max-width: 1100px) {
-    max-width: 20rem;
-    width: 50%;
-
     margin-bottom: 1rem;
   }
 `;
@@ -302,10 +299,15 @@ export const ContentAbout = styled.span`
   font-weight: 400;
   line-height: 2.6rem;
   text-align: justify;
+  text-indent: 5rem;
 
   @media only screen and (max-width: 1368px) {
     font-size: 1.2rem;
     line-height: 1.6rem;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    text-indent: 0;
   }
 `;
 
@@ -342,7 +344,7 @@ export const ExperienceContainer = styled.div`
 
 export const ExperienceTitle = styled.h3`
   font-family: ${({ theme }) => theme.primaryFontFamily};
-  color: ${({ theme }) => theme.neutralColor};
+  color: ${({ theme }) => theme.neutralColorHighlight};
   font-size: 2rem;
   line-height: 2.6rem;
   font-weight: 700;
@@ -361,11 +363,16 @@ export const ExperienceTitle = styled.h3`
 
 export const ExperienceContent = styled.span`
   font-family: ${({ theme }) => theme.secondaryFontFamily};
-  color: ${({ theme }) => theme.neutralColorDark};
-  font-size: 1.6rem;
-  line-height: 3rem;
+  color: ${({ theme }) => theme.neutralColorHighlight}98;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
   text-align: justify;
   font-weight: 400;
+
+  ul {
+    margin-top: 1rem;
+    padding-left: 3rem;
+  }
 
   @media only screen and (max-width: 1368px) {
     font-size: 1.3rem;
@@ -376,6 +383,15 @@ export const ExperienceContent = styled.span`
     font-size: 1rem;
     line-height: normal;
     text-align: left;
+
+    ul {
+      margin-top: 1rem;
+      padding-left: 0;
+
+      li {
+        margin-top: 0.5rem;
+      }
+    }
   }
 `;
 

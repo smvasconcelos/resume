@@ -21,7 +21,7 @@ export function CustomTabs({
   children,
   tabsLabel
 }: ICustomTabsProps): JSX.Element {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(tabsLabel.length - 1);
 
   if (children.length !== tabsLabel.length) {
     throw Error('Both arrays must have the same size.');

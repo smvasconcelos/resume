@@ -38,10 +38,10 @@ export function Navbar(): JSX.Element {
       }
     }
 
-    document.addEventListener('wheel', handleWheel);
+    document.addEventListener("wheel", handleWheel);
 
     return () => {
-      document.removeEventListener('wheel', handleWheel);
+      document.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
@@ -50,7 +50,7 @@ export function Navbar(): JSX.Element {
       <LogoContainer>
         <LogoClosure>&lt;</LogoClosure>
 
-        <LogoName>SAMUEL</LogoName>
+        <LogoName>S.M.V</LogoName>
 
         <LogoClosure>/&gt;</LogoClosure>
       </LogoContainer>

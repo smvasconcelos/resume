@@ -4,6 +4,7 @@ export const defaultTheme = {
   brandSecondaryColorDark: '#374AA5',
   brandTertiaryColor: '#FF0A78',
   neutralColor: '#E4E4EA',
+  neutralColorHighlight: '#FCFCFC',
   neutralColorDark: '#878787',
   highLightColor: '#D6D916',
   primaryFontFamily: `Gotham`,
