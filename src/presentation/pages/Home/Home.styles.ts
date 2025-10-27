@@ -227,7 +227,7 @@ export const AboutProfile = styled.div`
 export const AboutContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.3rem;
 
   > div {
     display: flex;
@@ -237,8 +237,8 @@ export const AboutContent = styled.div`
   }
 
   svg {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   @media only screen and (max-width: 1368px) {
@@ -314,9 +314,9 @@ export const ContentAbout = styled.span`
 export const ContentAboutTag = styled.span`
   font-family: ${({ theme }) => theme.secondaryFontFamily};
   color: ${({ theme }) => theme.neutralColor};
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 2rem;
-  padding: 1rem;
+  padding: 5px 12px;
   border-radius: 5px;
   text-align: left;
   border: 1px solid ${({ theme }) => theme.highLightColor};
