@@ -1,5 +1,3 @@
-'# Interactive Resume
-
 A modern, responsive interactive resume built with **React**, **TypeScript**, and **Vite**. This project serves as both a professional portfolio and a demonstration of modern frontend development practices.
 
 ## Features
