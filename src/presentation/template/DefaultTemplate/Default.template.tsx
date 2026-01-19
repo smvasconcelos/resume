@@ -8,7 +8,7 @@ export function DefaultTemplate({
   children: ReactNode;
 }): JSX.Element {
   return (
-    <Container >
+    <Container>
       <Navbar />
 
       {children}
