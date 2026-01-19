@@ -12,16 +12,16 @@ A modern, responsive interactive resume built with **React**, **TypeScript**, an
 - **Framework:** React
 - **Build Tool:** Vite
 - **Language:** TypeScript
-- **Package Manager:** pnpm
+- **Package Manager:** yarn
 - **Containerization:** Docker & Docker Compose
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v24-alpine recommended)
-- [Yarn](https://classic.yarnpkg.com/en/docs/install)
 - [Docker](https://www.docker.com/) (optional, for containerized execution)
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
 ### Local Development
 
@@ -35,13 +35,13 @@ A modern, responsive interactive resume built with **React**, **TypeScript**, an
 2. **Install dependencies:**
 
    ```bash
-   pnpm install
+   yarn install
    ```
 
 3. **Run the development server:**
 
    ```bash
-   pnpm dev
+   yarn dev
    ```
 
    The application will be available at http://localhost:5173.
