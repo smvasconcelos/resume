@@ -4,9 +4,8 @@ import { DefaultTemplate } from 'presentation/template';
 import { Trans, useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 import { Icons } from 'shared/assets/icons';
-import { animations } from 'shared/styles/animations';
 
-import { AnimatePresence } from 'framer-motion';
+import type { ParseKeys } from 'i18next';
 import { CustomTabs } from 'presentation/components/CustomTabs/CustomTabs.component';
 import profileImage from 'src/shared/assets/images/me_2.jpg';
 import {
@@ -55,93 +54,102 @@ export function Home(): JSX.Element {
 
   return (
     <DefaultTemplate>
-      <Container>
-        <AnimatePresence>
-          {percentageIndex === 1 && (
-            <StartContainer {...animations.popInFade}>
-              <Header>
-                {t('fullstackDev')} <br /> <span>{t('transforming')}</span>{' '}
-                {t('designsInto')}
-              </Header>
+      {/* SECTION 1: HERO */}
+      <Container
+        as='section'
+        id='home'
+      >
+        <StartContainer>
+          <Header>
+            {t('fullstackDev')} <br /> <span>{t('transforming')}</span>{' '}
+            {t('designsInto')}
+          </Header>
 
-              <HeaderContent>{t('implementingRobustSolutions')}</HeaderContent>
+          <HeaderContent>{t('implementingRobustSolutions')}</HeaderContent>
 
-              <HeaderButton>
-                Ready to code
-                <span>___</span>
-              </HeaderButton>
-            </StartContainer>
-          )}
-        </AnimatePresence>
+          <HeaderButton>
+            Ready to code
+            <span>___</span>
+          </HeaderButton>
+        </StartContainer>
+      </Container>
 
-        <AnimatePresence>
-          {percentageIndex === 2 && (
-            <AboutContainer {...animations.popInFade}>
-              <HeaderAbout>
-                {t('aboutMe')} <span>_</span>
-              </HeaderAbout>
+      {/* SECTION 2: ABOUT */}
+      <Container
+        as='section'
+        id='about'
+      >
+        <AboutContainer>
+          <HeaderAbout>
+            {t('aboutMe')} <span>_</span>
+          </HeaderAbout>
 
-              <AboutContentContainer>
-                <AboutProfile>
-                  <img
-                    src={profileImage}
-                    alt='Profile Image'
+          <AboutContentContainer>
+            <AboutProfile>
+              <img
+                src={profileImage}
+                alt='Profile Image'
+              />
+            </AboutProfile>
+
+            <AboutContent>
+              <ContentAbout>
+                <Trans
+                  t={t}
+                  i18nKey='aboutMeDescription'
+                  components={{ br: <br /> }}
+                />
+              </ContentAbout>
+
+              <div>
+                <ContentAboutTag>React</ContentAboutTag>
+                <ContentAboutTag>Typescript</ContentAboutTag>
+                <ContentAboutTag>Node</ContentAboutTag>
+                <ContentAboutTag>PHP</ContentAboutTag>
+                <ContentAboutTag>Laravel</ContentAboutTag>
+              </div>
+
+              <div>
+                <Icons.React />
+                <Icons.Ts />
+                <Icons.Js />
+                <Icons.Html />
+                <Icons.Css />
+                <Icons.NodeJs />
+                <Icons.Php />
+                <Icons.Laravel />
+              </div>
+            </AboutContent>
+          </AboutContentContainer>
+        </AboutContainer>
+      </Container>
+
+      {/* SECTION 3: EXPERIENCE */}
+      <Container
+        as='section'
+        id='experience'
+      >
+        <CustomTabs tabsLabel={works.map(item => item.tab)}>
+          {works.map(item => {
+            return (
+              <ExperienceContainer key={item.title}>
+                <ExperienceTitle>{item.title}</ExperienceTitle>
+                <ExperienceContent>
+                  <Trans
+                    t={t}
+                    i18nKey={item.description as ParseKeys}
+                    components={{
+                      br: <br />,
+                      li: <li />,
+                      ul: <ul />,
+                      strong: <strong />
+                    }}
                   />
-                </AboutProfile>
-
-                <AboutContent>
-                  <ContentAbout>
-                    <Trans
-                      t={t}
-                      i18nKey='aboutMeDescription'
-                      components={{ br: <br /> }}
-                    />
-                  </ContentAbout>
-
-                  <div>
-                    <ContentAboutTag>React</ContentAboutTag>
-                    <ContentAboutTag>Typescript</ContentAboutTag>
-                    <ContentAboutTag>Node</ContentAboutTag>
-                    <ContentAboutTag>PHP</ContentAboutTag>
-                    <ContentAboutTag>Laravel</ContentAboutTag>
-                  </div>
-
-                  <div>
-                    <Icons.React />
-                    <Icons.Ts />
-                    <Icons.Js />
-                    <Icons.Html />
-                    <Icons.Css />
-                    <Icons.NodeJs />
-                    <Icons.Php />
-                    <Icons.Laravel />
-                  </div>
-                </AboutContent>
-              </AboutContentContainer>
-            </AboutContainer>
-          )}
-        </AnimatePresence>
-
-        <AnimatePresence>
-          {percentageIndex === 3 && (
-            <CustomTabs tabsLabel={works.map(item => item.tab)}>
-              {works.map(item => {
-                return (
-                  <ExperienceContainer key={item.title}>
-                    <ExperienceTitle>{item.title}</ExperienceTitle>
-                    <ExperienceContent>
-                      <Trans
-                        t={t}
-                        i18nKey={item.description}
-                        components={{ br: <br />, li: <li/>, ul: <ul/>, strong: <strong/> }}
-                      />
-                    </ExperienceContent>
-                  </ExperienceContainer>
-                );
-              })}
-            </CustomTabs>
-          )}
-        </AnimatePresence>
+                </ExperienceContent>
+              </ExperienceContainer>
+            );
+          })}
+        </CustomTabs>
       </Container>
 
       <ProgressBar

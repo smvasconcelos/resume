@@ -1,5 +1,8 @@
+import i18next from 'i18next';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Icons } from 'shared/assets/icons';
 import {
   Container,
   LanguageContainer,
@@ -9,41 +12,47 @@ import {
   NavbarContainer,
   NavbarItem
 } from './Navbar.styles';
-import { useTranslation } from 'react-i18next';
-import { Icons } from 'shared/assets/icons';
-import i18next from 'i18next';
 
-export const routesHashes = ['#start', '#about', '#experience'];
+export const routesHashes = ['#home', '#about', '#experience'];
 
 export function Navbar(): JSX.Element {
   const { hash } = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation('global');
+  const rootElement: HTMLDivElement = document.querySelector(
+    '#root'
+  ) as HTMLDivElement;
 
   useEffect(() => {
-    function handleWheel(event: WheelEvent): void {
-      const deltaY = event.deltaY;
-      const hash = window.location.hash;
-      const index =
-        hash === '' ? 0 : routesHashes.findIndex(item => item === hash);
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    };
 
-      if (deltaY > 0 && index + 1 < routesHashes.length) {
-        setTimeout(() => {
-          navigate(`${routesHashes[index + 1]}`);
-        }, 100);
-      } else if (deltaY < 0 && index - 1 >= 0) {
-        setTimeout(() => {
-          navigate(`${routesHashes[index - 1]}`);
-        }, 100);
-      }
+    function observerCallback(entries: IntersectionObserverEntry[]): void {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const hash = window.location.hash.replace('#', '');
+
+          if (id && id !== hash) {
+            navigate(`#${id}`, { replace: true });
+          }
+        }
+      });
     }
 
-    document.addEventListener("wheel", handleWheel);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
 
-    return () => {
-      document.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, [navigate]);
 
   return (
     <Container>
@@ -57,8 +66,8 @@ export function Navbar(): JSX.Element {
 
       <NavbarContainer>
         <NavbarItem
-          href='#start'
-          $active={hash === '#start' || hash === ''}
+          href='#home'
+          $active={hash === '#home' || hash === ''}
         >
           index
         </NavbarItem>

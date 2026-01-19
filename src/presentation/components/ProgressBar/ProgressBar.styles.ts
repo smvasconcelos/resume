@@ -7,4 +7,7 @@ export const Container = styled.div<ProgressBarStylesType>`
   width: ${({ $percentage }) => $percentage}%;
   border-radius: 5px;
   transition: width 250ms ease-in-out;
+  position: fixed;
+  top: 0;
+  left: -10px;
 `;

@@ -41,9 +41,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html, body, #root {
-    scroll-behavior: smooth;
-
     height: 100vh;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+
 
     /* 1920px and UP - Full HD */
     /* stylelint-disable-next-line declaration-property-unit-allowed-list */
@@ -61,6 +63,7 @@ const GlobalStyles = createGlobalStyle`
       font-size: 10px;
     }
   }
+
 `;
 
 export default GlobalStyles;

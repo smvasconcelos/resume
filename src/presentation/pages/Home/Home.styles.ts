@@ -1,21 +1,19 @@
-import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
+import styled, { css } from 'styled-components';
 import { ImplementationsStylesType } from './Home.types';
 
 export const Container = styled(motion.div)`
-  height: 100%;
+  height: 100vh; /* Required for snapping */
   width: 100%;
-  padding: 0 10vw;
+  padding: 10vh 10vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
 
-  + .progress-bar-absolute {
-    position: absolute;
-    top: 0;
-    left: -10px;
-  }
+  /* Snap alignment logic */
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 
   @media only screen and (max-width: 810px) {
     width: 100%;
