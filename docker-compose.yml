@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    image: react-resume-docker:dev
+    container_name: react-resume-docker
+    ports:
+      - 5173:5173
+    volumes:
+      - .:/app
+      - /app/node_modules

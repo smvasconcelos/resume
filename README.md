@@ -1,30 +1,70 @@
-# React + TypeScript + Vite
+'# Interactive Resume
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive interactive resume built with **React**, **TypeScript**, and **Vite**. This project serves as both a professional portfolio and a demonstration of modern frontend development practices.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design:** Optimized for all screen sizes, from mobile to ultra-wide monitors.
+- **Fast Performance:** Powered by Vite for near-instant hot module replacement (HMR).
+- **Type Safe:** Built entirely with TypeScript for better maintainability and developer experience.
+- **Dockerized:** Ready for containerized local development and deployment.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Framework:** React
+- **Build Tool:** Vite
+- **Language:** TypeScript
+- **Package Manager:** pnpm
+- **Containerization:** Docker & Docker Compose
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname
-  }
-};
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v24-alpine recommended)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
+- [Docker](https://www.docker.com/) (optional, for containerized execution)
+
+### Local Development
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone [https://github.com/smvasconcelos/resume.git](https://github.com/smvasconcelos/resume.git)
+   cd resume
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   pnpm dev
+   ```
+
+   The application will be available at http://localhost:5173.
+
+## 🐳 Running with Docker
+
+You can run the environment without installing Node locally by using the provided Docker configuration.
+
+**Build and start the container:**
+
+```bash
+docker-compose up --build
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Access the app: Open your browser and navigate to http://localhost:5173.
+
+The container is configured with volumes, so any changes you make to the source code on your local machine will automatically reflect in the running container.
+
+Docker Configuration Details
+
+- Dockerfile: Uses node:24-alpine for a lightweight footprint.
+- Port: Exposes port 5173.
+- Syncing: Uses volumes to sync the project root and persist node_modules for optimal performance.
+  '
