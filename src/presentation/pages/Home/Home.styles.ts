@@ -187,6 +187,10 @@ export const AboutContainer = styled(motion.div)`
     max-height: 90vh;
     gap: 1rem;
   }
+
+  @media only screen and (max-width: 560px) {
+    max-height: 65vh;
+  }
 `;
 
 export const AboutContentContainer = styled.div`
@@ -337,6 +341,7 @@ export const ExperienceContainer = styled.div`
 
   @media only screen and (max-width: 560px) {
     padding: 2rem;
+    max-height: 75vh;
   }
 `;
 
@@ -547,7 +552,7 @@ export const ImplementationCode = styled.span`
 
 export const ImplementationContainer = styled(
   motion.div
-)<ImplementationsStylesType>`
+) <ImplementationsStylesType>`
   max-width: 40rem;
   height: fit-content;
   display: flex;
