@@ -1,12 +1,12 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { ISyntaxHighlightProps } from './SyntaxHighlight.types';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { CopyToClipBoardButton } from './SyntaxHighlight.styles';
 import { Icons } from 'shared/assets/icons';
+import { CopyToClipBoardButton } from './SyntaxHighlight.styles';
+import { ISyntaxHighlightProps } from './SyntaxHighlight.types';
 
 export function SyntaxHighlight({
   codeString
-}: ISyntaxHighlightProps): JSX.Element {
+}: ISyntaxHighlightProps): React.JSX.Element {
   return (
     <div style={{ position: 'relative' }}>
       <SyntaxHighlighter

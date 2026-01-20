@@ -27,7 +27,7 @@ import {
 } from './Home.styles';
 import { IWorks } from './Home.types';
 
-export function Home(): JSX.Element {
+export function Home(): React.JSX.Element {
   const { hash } = useLocation();
   const { t } = useTranslation('global');
 
