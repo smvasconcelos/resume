@@ -15,7 +15,7 @@ import {
 
 export const routesHashes = ['#home', '#about', '#experience'];
 
-export function Navbar(): JSX.Element {
+export function Navbar(): React.JSX.Element {
   const { hash } = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation('global');

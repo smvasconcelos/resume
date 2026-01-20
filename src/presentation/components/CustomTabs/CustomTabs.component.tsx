@@ -1,4 +1,6 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import { animations } from 'shared/styles/animations';
 import {
   Container,
   ContentContainer,
@@ -6,8 +8,6 @@ import {
   TabsContainer
 } from './CustomTabs.styles';
 import { ICustomTabsProps } from './CustomTabs.types';
-import { AnimatePresence, motion } from 'framer-motion';
-import { animations } from 'shared/styles/animations';
 
 export const routesHashes = [
   '#start',
@@ -20,7 +20,7 @@ export const routesHashes = [
 export function CustomTabs({
   children,
   tabsLabel
-}: ICustomTabsProps): JSX.Element {
+}: ICustomTabsProps): React.JSX.Element {
   const [activeTab, setActiveTab] = useState(tabsLabel.length - 1);
 
   if (children.length !== tabsLabel.length) {

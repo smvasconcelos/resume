@@ -1,0 +1,24 @@
+{
+  "name": "React Resume Docker",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        }
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "styled-components.vscode-styled-components"
+      ]
+    }
+  },
+  "postCreateCommand": ""
+}

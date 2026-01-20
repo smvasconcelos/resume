@@ -6,7 +6,7 @@ export function DefaultTemplate({
   children
 }: {
   children: ReactNode;
-}): JSX.Element {
+}): React.JSX.Element {
   return (
     <Container>
       <Navbar />

@@ -4,7 +4,7 @@ import { IProgressBarProps } from './ProgressBar.types';
 export function ProgressBar({
   percentage,
   ...rest
-}: IProgressBarProps): JSX.Element {
+}: IProgressBarProps): React.JSX.Element {
   return (
     <Container
       {...rest}
