@@ -1,10 +1,15 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 import { CustomTabsStylesType } from './CustomTabs.types';
-import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   width: fit-content;
   margin: 0 auto;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
 
   @media only screen and (max-width: 1024px) {
     margin-top: 20vh;
@@ -18,7 +23,7 @@ export const ContentContainer = styled(motion.div)`
   align-items: center;
   border-radius: 5px;
   border-top: 1px solid ${({ theme }) => theme.highLightColor};
-  box-shadow: 10px 11px 29px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 2px 5px ${({ theme }) => theme.highLightColor};
   background-color: #131528;
 `;
 
@@ -36,19 +41,19 @@ export const TabItem = styled.span<CustomTabsStylesType>`
   line-height: 2.4rem;
   text-align: center;
   font-family: ${({ theme }) => theme.primaryFontFamily};
-  color: ${({ theme }) => theme.brandPrimaryColor};
+  color: ${({ theme }) => theme.neutralColorHighlight};
   transition: font-size 250ms ease;
   padding: 1.6rem;
   transition: background 250ms ease-in-out;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  background-color: #5b451e;
+  background-color: ${({ theme }) => theme.brandSecondaryColorDark};
   cursor: pointer;
 
   ${({ active }) =>
     active &&
     css`
-      background-color: ${({ theme }) => theme.highLightColor};
+      background-color: ${({ theme }) => theme.brandPrimaryColor};
     `}
 
   @media only screen and (max-width: 1368px) {

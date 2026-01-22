@@ -7,12 +7,11 @@ import { Icons } from 'shared/assets/icons';
 
 import type { ParseKeys } from 'i18next';
 import { CustomTabs } from 'presentation/components/CustomTabs/CustomTabs.component';
-import profileImage from 'src/shared/assets/images/me_2.jpg';
 import {
   AboutContainer,
   AboutContent,
   AboutContentContainer,
-  AboutProfile,
+  Blinker,
   Container,
   ContentAbout,
   ContentAboutTag,
@@ -68,8 +67,8 @@ export function Home(): React.JSX.Element {
           <HeaderContent>{t('implementingRobustSolutions')}</HeaderContent>
 
           <HeaderButton>
-            Ready to code
-            <span>___</span>
+            &gt; Ready to code
+            <Blinker>__</Blinker>
           </HeaderButton>
         </StartContainer>
       </Container>
@@ -81,16 +80,16 @@ export function Home(): React.JSX.Element {
       >
         <AboutContainer>
           <HeaderAbout>
-            {t('aboutMe')} <span>_</span>
+            &gt; {t('aboutMe')} <Blinker>_</Blinker>
           </HeaderAbout>
 
           <AboutContentContainer>
-            <AboutProfile>
+            {/* <AboutProfile>
               <img
                 src={profileImage}
                 alt='Profile Image'
               />
-            </AboutProfile>
+            </AboutProfile> */}
 
             <AboutContent>
               <ContentAbout>
@@ -133,7 +132,10 @@ export function Home(): React.JSX.Element {
           {works.map(item => {
             return (
               <ExperienceContainer key={item.title}>
-                <ExperienceTitle>{item.title}</ExperienceTitle>
+                <ExperienceTitle>
+                  &gt; {item.title} <Blinker>_</Blinker>
+                </ExperienceTitle>
+
                 <ExperienceContent>
                   <Trans
                     t={t}

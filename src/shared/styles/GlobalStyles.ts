@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import './App.css';
 
 const GlobalStyles = createGlobalStyle`
+  @import url('https://cdn.staticdelivr.com/gfonts/css2?family=Fira+Code:wght@300..700&display=swap');
+
   * {
     margin: 0;
     padding: 0;
@@ -16,17 +18,13 @@ const GlobalStyles = createGlobalStyle`
 
     /* Track */
     &::-webkit-scrollbar-track {
-      background-color: ${({ theme }) => theme.brandPrimaryColor};
+      background: #0e141b;
     }
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
       border-radius: 8px;
-      background-color: ${({ theme }) => theme.brandTertiaryColor};
-    }
-
-    /* Handle on hover */
-    &::-webkit-scrollbar-thumb:hover {
+      background: #0e141b;
     }
 
 
