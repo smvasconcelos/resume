@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { type defaultTheme } from '../styles/themes/default.theme';
+import { type crtTheme } from '../styles/themes/crt.theme';
 
 import 'styled-components';
 
 declare module 'styled-components' {
-  type ThemeType = typeof defaultTheme;
+  type ThemeType = typeof crtTheme;
 
-  export interface DefaultTheme extends ThemeType {}
+  export interface DefaultTheme extends ThemeType { }
 }

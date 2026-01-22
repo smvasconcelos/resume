@@ -54,6 +54,27 @@ export const NavbarItem = styled.a<NavItemStylesType>`
   }
 `;
 
+export const BlogButton = styled.a`
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.92rem;
+  text-align: center;
+  font-family: ${({ theme }) => theme.primaryFontFamily};
+  background-color: transparent;
+  color: ${({ theme }) => theme.brandPrimaryColor};
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 2px solid ${({ theme }) => theme.brandPrimaryColor};
+
+  @media only screen and (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+  }
+`
+
 export const NavbarContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -72,11 +93,11 @@ export const LogoContainer = styled.div`
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
 `;
 
 export const LogoName = styled.h1`
   font-size: 3.2rem;
-  font-weight: 700;
   line-height: 3.84rem;
   text-align: center;
   font-family: ${({ theme }) => theme.primaryFontFamily};

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Icons } from 'shared/assets/icons';
 import {
+  BlogButton,
   Container,
   LanguageContainer,
   LogoClosure,
@@ -62,6 +63,7 @@ export function Navbar(): React.JSX.Element {
         <LogoName>S.M.V</LogoName>
 
         <LogoClosure>/&gt;</LogoClosure>
+        {/* <Terminal /> */}
       </LogoContainer>
 
       <NavbarContainer>
@@ -86,12 +88,12 @@ export function Navbar(): React.JSX.Element {
           {t('carrear')}
         </NavbarItem>
 
-        <NavbarItem
+        <BlogButton
           target='_blank'
           href={`https://smvasconcelos.github.io/devlogs/${i18next.language ?? 'en'}/`}
         >
           BLOG
-        </NavbarItem>
+        </BlogButton>
 
         <LanguageContainer>
           {i18next.language === 'pt' ? (

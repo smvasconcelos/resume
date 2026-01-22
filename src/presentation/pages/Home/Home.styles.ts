@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { ImplementationsStylesType } from './Home.types';
 
 export const Container = styled(motion.div)`
@@ -24,6 +24,20 @@ export const Container = styled(motion.div)`
   }
 `;
 
+const blinker = keyframes`
+  50% {
+    opacity: 0;
+  }
+`
+
+export const Blinker = styled.span`
+  opacity: 1;
+  animation: ${blinker} 1.3s linear infinite;
+  margin-left: 1rem;
+  letter-spacing: -5px;
+  font-weight: 700;
+`
+
 export const StartContainer = styled(motion.div)`
   width: 100%;
   display: flex;
@@ -41,7 +55,7 @@ export const StartContainer = styled(motion.div)`
 `;
 
 export const Header = styled.h1`
-  width: 90rem;
+  width: 24ch;
   font-family: ${({ theme }) => theme.primaryFontFamily};
   color: ${({ theme }) => theme.neutralColor};
   font-size: 6.4rem;
@@ -49,14 +63,7 @@ export const Header = styled.h1`
   line-height: 7.6rem;
 
   span {
-    background: linear-gradient(
-      183.72deg,
-      #7614a5 58.19%,
-      #617bff 89.6%,
-      #e4e4ea 98.86%
-    );
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: ${({ theme }) => theme.brandPrimaryColor};
   }
 
   @media only screen and (max-width: 1368px) {
@@ -102,14 +109,15 @@ export const HeaderContent = styled.span`
   }
 `;
 
-export const HeaderButton = styled(motion.button)`
+
+export const HeaderButton = styled(motion.h1)`
   text-transform: uppercase;
   text-decoration: none;
   border: none;
   outline: inherit;
   width: fit-content;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.brandSecondaryColor};
+  background-color: ${({ theme }) => theme.brandPrimaryColor};
   font-size: 2rem;
   padding: 0 4rem;
   font-weight: 700;
@@ -118,19 +126,6 @@ export const HeaderButton = styled(motion.button)`
   letter-spacing: 3px;
   line-height: 7.6rem;
   margin: 0;
-
-  span {
-    opacity: 1;
-    animation: blinker 1.3s linear infinite;
-    margin-left: 1rem;
-    letter-spacing: -5px;
-  }
-
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
 
   @media only screen and (max-width: 1368px) {
     font-size: 1.5rem;
@@ -146,6 +141,7 @@ export const HeaderButton = styled(motion.button)`
     padding: 0 2rem;
     line-height: 4.6rem;
     font-size: 1.2rem;
+    width: fit-content;
   }
 `;
 
@@ -162,8 +158,7 @@ export const AboutContainer = styled(motion.div)`
   background-color: #131528;
   gap: 4rem;
   padding: 5rem;
-  border-top: 1px solid ${({ theme }) => theme.highLightColor};
-  box-shadow: 10px 11px 29px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 2px 5px ${({ theme }) => theme.highLightColor};
 
   @media only screen and (max-width: 1760px) {
     width: 100%;
@@ -190,6 +185,7 @@ export const AboutContainer = styled(motion.div)`
 
   @media only screen and (max-width: 560px) {
     max-height: 65vh;
+    gap: 0;
   }
 `;
 
@@ -219,6 +215,7 @@ export const AboutProfile = styled.div`
   @media only screen and (max-width: 768px) {
     min-width: 15rem;
     min-height: 20rem;
+    display: none;
   }
 
   @media only screen and (max-width: 1100px) {
@@ -260,24 +257,16 @@ export const HeaderAbout = styled.h1`
   font-family: ${({ theme }) => theme.primaryFontFamily};
   color: ${({ theme }) => theme.neutralColor};
   font-weight: 700;
-  font-size: 5.4rem;
+  font-size: 4.4rem;
   line-height: 6.6rem;
 
   span {
-    opacity: 1;
-    animation: blinker 1.3s linear infinite;
     margin-left: -8px;
     letter-spacing: -5px;
   }
 
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
-
   @media only screen and (max-width: 1368px) {
-    font-size: 5.4rem;
+    font-size: 4.4rem;
     line-height: 6.6rem;
   }
 
@@ -310,6 +299,11 @@ export const ContentAbout = styled.span`
 
   @media only screen and (max-width: 1024px) {
     text-indent: 0;
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (max-width: 560px) {
+    font-size: 1rem;
   }
 `;
 
@@ -352,6 +346,10 @@ export const ExperienceTitle = styled.h3`
   line-height: 2.6rem;
   font-weight: 700;
   text-align: left;
+
+  span {
+    margin-left: 0;
+  }
 
   @media only screen and (max-width: 1368px) {
     font-size: 2rem;
@@ -439,7 +437,7 @@ export const ProjectContainer = styled(motion.div)`
   border: 1px solid ${({ theme }) => theme.highLightColor}20;
   border-top: 2px solid ${({ theme }) => theme.highLightColor};
   min-height: 39rem;
-  box-shadow: 10px 11px 29px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 2px 5px ${({ theme }) => theme.highLightColor};
 
   @media only screen and (max-width: 560px) {
     gap: 1rem;
